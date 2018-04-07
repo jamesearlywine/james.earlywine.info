@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  indykaraoke-webclient:
+    container_name: nginx_james.earlywine.info
+    build:
+      context: .
+      dockerfile: webserver.Dockerfile
+    volumes:
+      - "./public:/var/www/html"
+      - "./webapp.init.sh:/usr/local/bin/webapp.init.sh"
+    environment:
+      - "ENVIRONMENT=local"
+      - "VIRTUAL_HOST=james.earlywine.info"
+      - "VIRTUAL_PORT=80"
+    command: /bin/bash -c "/usr/local/bin/webapp.init.sh && nginx -g 'daemon off;'"
+
+networks:
+  default:
+    external:
+      name: dockerwebproxy_default
