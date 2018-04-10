@@ -1,0 +1,488 @@
+@import 'https://fonts.googleapis.com/css?family=Oswald';
+
+body
+{
+  font-size:16px; /* base font */
+  background-color:#1f1f1f;
+  background-image:url('../img/bg.jpg');
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-size:initial;
+  box-sizing:border-box;
+}
+
+.header-container
+{
+  font-size:1.5em;
+  padding:10px 0 5px 0;
+  width:100%;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#333333+0,000000+98 */
+  background: #333333; /* Old browsers */
+  background: -moz-linear-gradient(top,  #333333 0%, #000000 98%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #333333 0%,#000000 98%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #333333 0%,#000000 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.logo-container
+{
+  text-align:center;
+}
+
+@media screen and (min-width:768px)
+{
+  .logo-container
+  {
+    text-align:left;
+  }
+}
+
+.site-title-container
+{
+  text-align:center;
+}
+
+@media screen and (min-width:768px)
+{
+  .site-title-container
+  {
+    text-align:right;
+  }
+}
+
+.site-title
+{
+  max-width:280px;
+}
+
+@media screen and (min-width:480px)
+{
+  .site-title
+  {
+    max-width:100%;
+  }
+}
+
+.chart-title
+{
+  font-family: 'Oswald', sans-serif;
+  color:#FFF;
+  text-shadow:2px 2px 5px #000;
+  text-align:center;
+  margin:0;
+  font-size:1.25em;
+}
+
+@media screen and (min-width: 992px)
+{
+  .chart-title
+  {
+    font-size:1.5em;
+  }
+}
+
+@media screen and (min-width: 1200px)
+{
+  .chart-title
+  {
+    font-size:1.75em;
+  }
+}
+
+.dot-legend-container
+{
+  width:100%;
+  margin:0 auto;
+  padding:0 15px;
+}
+
+@media screen and (min-width:640px)
+{
+  .dot-legend-container
+  {
+    width:95%;
+  }
+}
+
+@media screen and (min-width:768px)
+{
+  .dot-legend-container
+  {
+    width:86%;
+  }
+}
+
+@media screen and (min-width:992px)
+{
+  .dot-legend-container
+  {
+    width:66%;
+  }
+}
+
+@media screen and (min-width:1200px)
+{
+  .dot-legend-container
+  {
+    width:54%;
+  }
+}
+
+.dot-legend
+{
+  float:none;
+  cursor: pointer;
+}
+
+@media screen and (min-width:768px)
+{
+  .dot-legend
+  {
+    float:left;
+  }
+}
+
+.dot-legend text
+{
+  font-size:1.15em;
+  /*text-shadow:2px 2px 4px #000;*/
+}
+
+.indystar-dot-legend
+{
+  width:160px;
+  height:35px;
+}
+
+/*
+.indystar-dot-legend ellipse
+{
+  fill:url('../../newtest/#blueGradVertical');
+  stroke:url('../../newtest/#blueGradHorizontal');
+  stroke-width:3;
+}*/
+
+.adnetwork-dot-legend
+{
+  width:180px;
+  height:35px;
+}
+
+/*
+.adnetwork-dot-legend ellipse
+{
+  fill:url('../../newtest/#orangeGradVertical');
+  stroke:url('../../newtest/#orangeGradHorizontal');
+  stroke-width:3;
+}
+*/
+
+.adnetwork-indystar-dot-legend
+{
+  width:230px;
+  height:35px;
+}
+
+/*
+.adnetwork-indystar-dot-legend ellipse
+{
+  fill:url('../../newtest/#greenGradVertical');
+  stroke:url('../../newtest/#greenGradHorizontal');
+  stroke-width:3;
+}*/
+
+.indystar-dot-legend ellipse.off,
+.adnetwork-dot-legend ellipse.off,
+.adnetwork-indystar-dot-legend ellipse.off
+{
+  fill:#333;
+}
+
+.chart-container
+{
+  height:600px;
+}
+
+.clear-fix
+{
+  float:none;
+  clear:both;
+}
+
+.line-legend-container
+{
+  width:100%;
+  margin:0 auto;
+  padding:0 15px;
+}
+
+@media screen and (min-width:768px)
+{
+  .line-legend-container
+  {
+    width:91%;
+  }
+}
+
+@media screen and (min-width:992px)
+{
+  .line-legend-container
+  {
+    width:88%;
+  }
+}
+
+@media screen and (min-width:1200px)
+{
+  .line-legend-container
+  {
+    width:72%;
+  }
+}
+
+.line-legend
+{
+  float:none;
+}
+
+@media screen and (min-width:768px)
+{
+  .line-legend
+  {
+    float:left;
+  }
+}
+
+.line-legend text
+{
+  font-size:0.875em;
+  /*text-shadow:2px 2px 4px #000;*/
+}
+
+.indystar-line-legend
+{
+  width:170px;
+  height:25px;
+}
+
+.adnetwork-line-legend
+{
+  width:185px;
+  height:25px;
+}
+
+.adnetwork-indystar-line-legend
+{
+  width:250px;
+  height:25px;
+}
+
+svg.google-line-legend
+{
+  width:175px;
+  height:25px;
+}
+
+.year-container
+{
+  z-index:999;
+}
+
+.year
+{
+  font-family: 'Oswald', sans-serif;
+  font-size:1em;
+  color:#FFF;
+  border:1px solid #444;
+  border-radius:5px;
+  max-width:100px;
+  position:relative;
+  box-shadow:2px 2px 5px #000;
+  margin:0 auto 15px auto;
+  display:none;
+}
+
+@media screen and (min-width:768px)
+{
+  .year
+  {
+    margin:initial;
+    display:block;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width:992px)
+{
+  .year
+  {
+    font-size:1.25em;
+  }
+}
+
+.dropdown-title
+{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#333333+0,000000+100 */
+  background: #333333; /* Old browsers */
+  background: -moz-linear-gradient(top,  #333333 0%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #333333 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #333333 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  padding:10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor:pointer;
+  user-select:none;
+}
+
+.dropdown-title .icon
+{
+  float:right;
+}
+
+.year-list-container
+{
+  display:none;
+  position:absolute;
+  box-shadow:2px 2px 5px #000;
+  border-left:1px solid #444;
+  border-right:1px solid #444;
+  border-bottom:1px solid #444;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  margin-top:-1px;
+}
+
+.year-list-container.open
+{
+  display:block;
+}
+
+ul.year-list
+{
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+ul.year-list li a
+{
+  color:#FFF;
+  padding:10px;
+  display:block;
+  border-top:1px solid #000;
+  background:#333333;
+  width:97px;
+}
+
+ul.year-list li:first-child a
+{
+  border-top:none;
+}
+
+ul.year-list li a:hover
+{
+  background:#666;
+}
+
+.categories-container
+{
+  z-index:998;
+}
+
+.advertiser-categories
+{
+  font-family: 'Oswald', sans-serif;
+  font-size:1em;
+  color:#FFF;
+  border:1px solid #444;
+  border-radius:5px;
+  position:relative;
+  box-shadow:2px 2px 5px #000;
+  width:100%;
+  max-width:253px;
+  margin:15px auto 0 auto;
+  display:none;
+}
+
+@media screen and (min-width:768px)
+{
+  .advertiser-categories
+  {
+    margin:initial;
+    display:block;
+    visibility:hidden;
+  }
+}
+
+@media screen and (min-width:992px)
+{
+  .advertiser-categories
+  {
+    font-size:1.25em;
+  }
+}
+
+.categories-list-container
+{
+  display:none;
+  position:absolute;
+  box-shadow:2px 2px 5px #000;
+  border-left:1px solid #444;
+  border-right:1px solid #444;
+  border-bottom:1px solid #444;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  margin-top:-1px;
+  width:100%;
+}
+
+.categories-list-container.open
+{
+  display:block;
+}
+
+.categories-list-container .input-checkbox
+{
+  color:#FFF;
+  padding:10px;
+  display:block;
+  background:#333333;
+  margin:0;
+  cursor:pointer;
+}
+
+.categories-list-container .input-checkbox:first-child
+{
+  border-top:none;
+}
+
+.categories-list-container .input-checkbox:hover
+{
+  background:#666;
+}
+
+.footer-container
+{
+  text-align:center;
+  color:#999;
+  font-size:0.875em;
+}
+
+/* misc */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently */
+}
+
+#defs
+{
+  visibility:visible;
+}
