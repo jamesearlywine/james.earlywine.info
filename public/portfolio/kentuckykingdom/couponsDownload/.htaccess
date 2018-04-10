@@ -1,0 +1,16 @@
+<IfModule mod_headers.c>
+    <FilesMatch "\.(png|Png|PNG)$">
+        Header set Content-Disposition "attachment; filename=kentuckykingdom_co$
+        Allow from all
+    </FilesMatch>
+    <FilesMatch "\.(jpg|Jpg|JPG)$">
+        Header set Content-Disposition "attachment; filename=kentuckykingdom_coupon.jpg
+        Allow from all
+    </FilesMatch>
+    <FilesMatch "\.(pdf|Pdf|PDF)$">
+        Header set Content-Disposition "attachment; filename=kentuckykingdom_coupon.pdf
+        Allow from all
+    </FilesMatch>
+</IfModule>
+
+

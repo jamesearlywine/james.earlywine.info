@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Plan Your Day - IndyStar / Kentucky Kingdom and Hurricane Bay</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- https://github.com/twbs/bootstrap -->
+    <!-- License: https://github.com/twbs/bootstrap/blob/master/LICENSE -->
+    <link href="common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Normalize.css makes browsers render all elements more consistently and in line with modern standards -->
+    <link href="common/css/normalize.css" rel="stylesheet">
+
+    <!-- Web fonts -->
+    <link href="common/fonts/fontello/css/fontello.css" rel="stylesheet">
+
+    <!-- My custom styles -->
+    <link href="common/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and CSS3 media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+
+  <body>
+  <!-- Portfolio demo co-brand header -->
+  <div id="cobrand" class="desktop-cobrand">
+    <div class="cobrand-header-container">
+      <div class="cobrand-header">
+        ¡THIS DEMO FOR PORTFOLIO PURPOSES ONLY!
+      </div>
+    </div>
+  </div>
+
+  <div class="page plan-page">
+    <div class="subheader-container-thin"></div>
+
+    <div class="banner container">
+    	<div class="row kentucky-kingdom-brand">
+        	<a href="index.html"><img src="common/images/kentuckykingdom.png" alt="Kentucky Kingdom and Hurricane Bay" /></a>
+        </div>
+        <div class="row">
+        	<a href="javascript:history.back()" role="button" class="link-button-simple"><i class="icon icon-left-open"></i><span>Back</span></a>
+        </div><!--end .row -->
+    </div><!-- end .banner -->
+
+    <div id="main" class="container">
+    	<div class="title-container">
+        	<h1 class="title">Plan Your Day</h1>
+        </div>
+
+        <!-- Row -->
+        <div class="row">
+          <div class="col-md-6">
+		  <a href="schedule.html" role="button" class="link-button"><i class="icon icon-calendar link-icon"></i><span class="link-label" >2015 Operating Schedule</span></a>
+	      <a href="http://www.kentuckykingdom.com/experience/park-map/" target="_blank" role="button" class="link-button"><i class="icon icon-map link-icon"></i><span class="link-label">Park Map</span></a>
+          </div><!-- end col -->
+
+          <div class="col-md-6">
+          <a href="attractions.html" role="button" class="link-button"><i class="icon icon-star-filled link-icon"></i><span class="link-label">Rides, attractions and fun!</span></a>
+          <a href="gardens.html" role="button" class="link-button"><i class="icon icon-garden link-icon"></i><span class="link-label">It’s a walk in the park!</span></a>
+          </div><!-- end col -->
+      </div><!-- end .row -->
+
+      <div class="title-container">
+      	<h1 class="title">Get Directions</h1>
+      </div>
+
+      <!-- Row -->
+        <div class="row">
+          <div class="col-md-4 route-container">
+		     <img class="route" src="common/images/static-route.jpg" alt="general route" />
+          </div><!-- end col -->
+
+          <div class="col-md-8">
+          	<p>Kentucky Kingdom is on the grounds of the Kentucky Exposition Center, in the heart of Louisville at the intersection of I-65 and I-264. Follow the highway signs to the Kentucky Expo Center/Kentucky Kingdom and Hurricane Bay.</p>
+			<p class="bold-text">937 Phillips Lane<br />
+Louisville, KY 40209</p>
+			<p class="section-title">Choose a starting point:</p>
+
+            <!-- Google Maps Driving Directions Embed Code -->
+            <div class="directions-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m20!1m8!1m3!1d400908.50084343675!2d-85.77775913376925!3d38.27722888184941!3m2!1i1024!2i768!4f13.1!4m9!1i0!3e6!4m0!4m5!1s0x88690d09795554ff%3A0xbfb52922c18c3275!2sKentucky+Kingdom%2C+937+Phillips+Ln%2C+Louisville%2C+KY+40209!3m2!1d38.195572!2d-85.746903!5e0!3m2!1sen!2sus!4v1431436113278"></iframe>
+                <!-- End Google Maps Embed -->
+                <a href="https://maps.google.com/maps?ll=38.285853,-85.791492&z=9&t=m&hl=en-US&gl=US&mapclient=embed&saddr=&daddr=Kentucky%20Kingdom%2C%20937%20Phillips%20Lane%2C%20Louisville%2C%20KY%2040209&dirflg=d"
+                   target="_blank"></a>
+
+            </div>
+
+          </div><!-- end col -->
+      </div><!-- end .row -->
+    </div><!-- end #main -->
+  </div><!-- end #page -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="common/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- browser detection, to apply classes to body tag
+         (to deal with iframe responsive issues) -->
+    <script src="common/js/browser-detect.js"></script>
+
+    <!-- jQuery form validation plugin -->
+    <script src="common/js/jquery.validate.min.js"></script>
+    <script src="common/js/jquery.validate.additional-methods.min.js"></script>
+    <script>
+        // http://jqueryvalidation.org/documentation/ for rule declaration options
+        // example http://jqueryvalidation.org/phoneUS-method
+        $(function() {
+            var validationRules = {
+                rules: {
+                    'fieldname': { // your email
+                        required: true,
+                    },
+                    'fieldnname': { // friend email
+                        required: true,
+                    },
+					'fieldnname': { // subject
+                        required: true,
+                    },
+                    'fieldname': { // message
+                        required: true,
+                    }
+                }
+            };
+            // enable form validation for #contact-form using validationRules above
+            $('#emailForm').validate(validationRules);
+        });
+    </script>
+
+</body>
+</html>

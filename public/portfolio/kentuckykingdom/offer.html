@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>Get Exclusive IndyStar Offer - IndyStar / Kentucky Kingdom and Hurricane Bay</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- https://github.com/twbs/bootstrap -->
+    <!-- License: https://github.com/twbs/bootstrap/blob/master/LICENSE -->
+    <link href="common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Normalize.css makes browsers render all elements more consistently and in line with modern standards -->
+    <link href="common/css/normalize.css" rel="stylesheet">
+
+    <!-- Web fonts -->
+    <link href="common/fonts/fontello/css/fontello.css" rel="stylesheet">
+
+    <!-- My custom styles -->
+    <link href="common/css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and CSS3 media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  </head>
+  <body>
+  <!-- Portfolio demo co-brand header -->
+  <div id="cobrand" class="desktop-cobrand">
+    <div class="cobrand-header-container">
+      <div class="cobrand-header">
+        ¡THIS DEMO FOR PORTFOLIO PURPOSES ONLY!
+      </div>
+    </div>
+  </div>
+
+  <div class="page offer-page">
+  	<!-- THERE ARE TWO MODALS ON THIS PAGE -->
+  	<!-- Social Media Share Modal -->
+    <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="socialModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="icon icon-cancel"></i></button>
+            <h4 class="modal-title" id="socialModalLabel">Share on Social Media</h4>
+          </div>
+          <div class="modal-body">
+              <div class="share-body">
+                <button class="share" id="share-button">
+                    <i class="icon icon-export"> Share It</i>
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end .modal -->
+
+    <!-- E-mail Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="icon icon-cancel"></i></button>
+            <h4 class="modal-title" id="emailModalLabel">E-mail Coupon To A Friend</h4>
+          </div>
+          <div class="modal-body">
+          	<p class="not-displayed email-confirmation-message">Your e-mail has been sent!</p>
+
+            <div class="form">
+                <form role="form"
+                      id="emailForm"
+                      onsubmit="kentuckyKingdom_offer.sendTheEmail();event.preventDefault();return false;"
+                      >
+                    <div class="form-group">
+                        <label class="hidden-label" for="yourEmail">Your E-mail Address</label>
+                        <input type="text"
+                               class="form-control"
+                               id="yourEmail"
+                               name="from"
+                               placeholder="Your E-mail Address (required)"
+                               title="Valid email address is required."
+                               aria-required="true"
+                               >
+                    </div>
+                    <div class="form-group">
+                        <label class="hidden-label" for="friendEmail">Friend's E-mail Address</label>
+                        <input type="text"
+                               class="form-control"
+                               id="friendEmail"
+                               name="to"
+                               placeholder="Friend's E-mail Address (required)"
+                               title="Valid email address is required."
+                               aria-required="true"
+                               >
+                    </div>
+                    <div class="form-group">
+                        <label class="hidden-label" for="message">Message</label>
+                        <textarea class="form-control"
+                                  rows="3"
+                                  id="message"
+                                  name="body"
+                                  maxlength="512"
+                                  placeholder="Message (optional)"
+                                  title=""
+                                  aria-required="false"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit"
+                                id="submitEmail"
+                                name="submit"
+
+                                class="btn btn-lg btn-primary">
+                            <i class="icon icon-right-circled"></i>
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div><!-- end form -->
+          </div>
+        </div>
+      </div>
+    </div><!-- end .modal -->
+    <div class="subheader-container-thin"></div>
+
+    <div class="banner container">
+    	<div class="row kentucky-kingdom-brand">
+        	<a href="index.html"><img src="common/images/kentuckykingdom.png" alt="Kentucky Kingdom and Hurricane Bay" /></a>
+        </div>
+        <div class="row">
+        	<a href="index.html" role="button" class="link-button-simple"><i class="icon icon-left-open"></i><span>Back</span></a>
+        </div><!--end .row -->
+    </div><!-- end .banner -->
+
+    <div id="main" class="container">
+    	<div class="title-container">
+        	<h1 class="title">Get Exclusive Offer Provided by<img src="common/images/indystar.png" class="indystar-brand" alt="IndyStar" /></h1>
+        </div>
+
+        <!-- Row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+
+            <!-- Begin Save Coupon -->
+            <a href="couponsDownload/ticket.php"
+               onclick="kentuckyKingdom_offer.reportAction('save');
+                        if (window.isAndroid) {this.href='couponsDownload/ticket_android.php'}"
+               onfocus="this.blur()"
+               target="_blank"
+               role="button"
+               class="link-button"
+               >
+                <i class="icon icon-download link-icon"></i>
+                <span class="link-label">Save Coupon</span>
+            </a>
+            <!-- End Save Coupon -->
+
+            <!-- Begin Print Coupon -->
+            <a href=""
+               onclick="kentuckyKingdom_offer.print();kentuckyKingdom_offer.reportAction('print');event.preventDefault();return false;"
+               onfocus="this.blur()"
+               role="button"
+               class="link-button">
+                <i class="icon icon-print link-icon"></i>
+                <span class="link-label">Print Coupon</span>
+            </a>
+            <!-- End Print Coupon -->
+
+          <a href=""
+             role="button"
+             data-toggle="modal"
+             data-target="#shareModal"
+             onfocus="this.blur()"
+             onclick="kentuckyKingdom_offer.reportAction('share')"
+             class="link-button">
+              <i class="icon icon-export link-icon"></i>
+              <span class="link-label">Share Coupon</span>
+          </a>
+
+          <a href=""
+          	role="button"
+            data-toggle="modal"
+            data-target="#emailModal"
+            onclick="kentuckyKingdom_offer.initEmailFields();kentuckyKingdom_offer.reportAction('email');"
+            onfocus="this.blur()"
+            class="link-button">
+            <i class="icon icon-mail link-icon"></i>
+            <span class="link-label">E-mail to Friend</span>
+          </a>
+
+          <a href="plan.html"
+             role="button"
+             onfocus="this.blur()"
+             class="link-button">
+            <i class="icon icon-calendar link-icon"></i>
+            <span class="link-label">Plan Your Day</span>
+          </a>
+
+              <div class="form side-form">
+	            <h3 class="section-title">How did you hear about this offer?</h3>
+                <p class="not-displayed source-confirmation-message">Thank you! Your feedback has been submitted.</p>
+                <form role="form" method="POST" id="mediaForm1" class="form-content">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="indystar1" value="IndyStar" checked>IndyStar
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="tv1" value="TV">TV
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="radio1" value="Radio">Radio
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="outdoor1" value="Outdoor">Outdoor
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="facebook1" value="Facebook">Facebook
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="other1" value="Other">Other
+                      </label>
+                    </div>
+                    <br />
+                    <button type="submit"
+                            id="submitMedia1"
+                            onclick="kentuckyKingdom_offer.reportTheSource('mediaForm1');event.preventDefault();return false;"
+                            name="submit"
+                            class="btn btn-lg btn-primary">
+                        <i class="icon icon-right-circled"></i>
+                        Submit
+                    </button>
+                </form>
+              </div><!-- end .form -->
+          </div><!-- end col -->
+          <br />
+          <div class="col-md-8">
+			<p class="bold">Offer good through: Tuesday, August 11th – then weekends only in August and September (excludes September 19th and 26th).</p>
+            <p>During the Kentucky State Fair:  Thursday, August 20th through Sunday, August 30th pay only $19.95 for Kentucky Kingdom and $10.00 admission to Kentucky State Fair. Hurricane Bay Water Park not open during the Kentucky State Fair, but resumes operation during weekends in September (weather permitting).</p>
+          	<p><a href="couponsPrint/kk-ticket-web.jpg" target="_blank" role="button">
+                        <!-- old values src="couponsPrint/kk-ticket-print.jpg"
+                             alt="Fun Pass Coupon" -->
+                        <img id="coupon-preview"
+                             class="coupon-preview"
+                             src="couponsPrint/kk-ticket-web.jpg"
+                             alt="Fun Pass Coupon"
+                              />
+                    </a>
+                </p>
+                <div class="form bottom-form">
+                <h3 class="section-title">How did you hear about this offer?</h3>
+                <p  class="not-displayed source-confirmation-message">Thank you! Your feedback has been submitted.</p>
+
+                <form role="form" method="POST" id="mediaForm2" class="form-content">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="indystar2" value="IndyStar" checked>IndyStar
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="tv2" value="TV">TV
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="radio2" value="Radio">Radio
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="outdoor2" value="Outdoor">Outdoor
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="facebook2" value="Facebook">Facebook
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="mediaType" id="other2" value="Other">Other
+                      </label>
+                    </div>
+                    <br />
+                    <button
+                        type="submit"
+                        id="submitMedia2"
+                        name="submit"
+                        onclick="kentuckyKingdom_offer.reportTheSource('mediaForm2');event.preventDefault();return false;"
+                        class="btn btn-lg btn-primary">
+                        <i class="icon icon-right-circled"></i>
+                        Submit
+                    </button>
+                </form>
+              </div><!-- end .form -->
+          </div><!-- end col -->
+      </div><!-- end .row -->
+    </div><!-- end #main -->
+  </div><!-- end #page -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="common/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- browser detection, to apply classes to body tag
+         (to deal with iframe responsive issues) -->
+    <script src="common/js/browser-detect.js"></script>
+
+    <!-- jQuery form validation plugin -->
+    <script src="common/js/jquery.validate.min.js"></script>
+    <script src="common/js/jquery.validate.additional-methods.min.js"></script>
+    <script>
+        // http://jqueryvalidation.org/documentation/ for rule declaration options
+        // example http://jqueryvalidation.org/phoneUS-method
+        $(function() {
+            kentuckyKingdom_offer.emailFormValidationRules = {
+                rules: {
+                    'from': { // your email
+                        required    : true,
+                        email       : true
+                    },
+                    'to': { // friend email
+                        required    : true,
+                            email   : true
+                    },
+                    'body': { // message
+                        required: false
+                    }
+                }
+            };
+            // enable form validation for #contact-form using validationRules above
+            $('#emailForm').validate(kentuckyKingdom_offer.emailFormValidationRules);
+        });
+    </script>
+
+    <!-- Hideshare.js jquery library/extension -->
+    <script src="common/js/share.js"></script>
+    <!-- page specific js -->
+    <script src="common/js/kentuckyKingdom_offer.js"></script>
+
+    </body>
+</html>
