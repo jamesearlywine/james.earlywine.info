@@ -548,4 +548,5 @@ iframe {
 /** JLE additions to template **/
 .site-link-container {
   margin-top: 8px;
+  margin-bottom: 14px;
 }
