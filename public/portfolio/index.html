@@ -16,7 +16,8 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
+  <!-- lightbox gallery -->
+  <link href="node_modules/simplelightbox/dist/simplelightbox.min.css" rel="stylesheet">
   <!-- Global CSS -->
   <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Plugins CSS -->
@@ -91,8 +92,8 @@
               <p>
                 I've been lucky over the years, to work on empowered teams filled with kind brilliant people.  Looking forward to continued growth and evolution.
               </p>
-              <br>
-              <p>
+              <br/>
+              <div>
                 <ul>
                   <li>
                     This portfolio is a work-in-progress (as of April 2018, while I'm in "job-search mode").
@@ -104,7 +105,7 @@
                     I've included code samples (github link) for TheFinerYears project, I'll add code samples for Indykaraoke.com in the near future.
                   </li>
                 </ul>
-              </p>
+              </div>
             </div>
             <!--//content-->
           </div>
@@ -121,7 +122,9 @@
                 <h3 class="title">
                   <a href="http://indykaraoke.com" target="_blank">IndyKaroake.com</a>
                 </h3>
-                <p class="summary">A responsive web app that shows you local karaoke events/locations any day of the week</p>
+                <p class="summary">
+                  A responsive web app that shows you local karaoke events/locations any day of the week
+                </p>
                 <div class="featured-image">
                   <a href="http://indykaraoke.com" target="_blank">
                     <img class="img-responsive project-image" src="assets/images/projects/indykaraoke_screenshot1b.png" alt="project name" />
@@ -132,7 +135,7 @@
                 </div>
 
                 <div class="desc text-left">
-                  <p>This site is WAY not done, but I'm building it out in my time off. I'm rebuilding it in a newer tech stack,
+                  <div>This site is WAY not done, but I'm building it out in my time off. I'm rebuilding it in a newer tech stack,
                     to showcase some of my newer skillsets like:
                     <ul>
                       <li>Angular 4 / Typescript</li>
@@ -141,9 +144,11 @@
                       <li>Infrastructure-as-Code / Docker</li>
                     </ul>
                     Complete with documentation, etc. (SwaggerUI, Doxygen, etc)
+                  </div>
+                  <p>
+                    This is the old version, with an AngularJS client. I'll share github links after I've got something more
+                    clean and complete to show. For now, it's WAY not done, and is being rebuilt.
                   </p>
-                  <p>This is the old version, with an AngularJS client. I'll share github links after I've got something more
-                    clean and complete to show. For now, it's WAY not done, and is being rebuilt.</p>
                 </div>
                 <!--//desc-->
                 <a class="btn btn-cta-secondary" href="http://indykaraoke.com" target="_blank">
@@ -170,7 +175,7 @@
                 <div class="col-xs-12">
                   <h4>Stratice Healthcare, LLC <span class="tenure">(2017 - 2018)</span></h4>
                   <h5>Senior Solutions Developer</h5>
-                  <p>
+                  <div>
                     Synopsis/Role:
                     <ul>
                       <li>Full stack developer on an agile team of:
@@ -186,20 +191,20 @@
                       <li>Most of the new features/functionality I wrote, were in the new codebase (Grails3/Angular).</li>
                       <li>Migrated existing functionality from the old tech-stack to the new.</li>
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
 
               <!-- eDMEPlus -->
               <div class="item row">
                 <div class="col-xs-12 col-sm-6">
-                  <a href="screenshots/edmeplus" target="_blank"></a>
+                  <div onclick="galleries.edmeplus.open()">
                     <h3 class="title">eDMEPlus.com</h3>
-                    <img class="img-responsive project-image" src="assets/images/projects/edmeplus_screenshot1b.png" alt="eDMEPlus" />
+                    <img class="img-responsive project-image" src="assets/images/projects/edmeplus_screenshot_1.png" alt="eDMEPlus" />
                     <div class="text-center site-link-container">
                       <span class="btn btn-cta-secondary"><i class="fa fa-external-link"></i>Screenshots</span>
                     </div>
-                  </a>
+                  </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                   <h3 class="title">Team Developer</h3>
@@ -211,6 +216,11 @@
                   </p>
                 </div>
               </div>
+              <!-- screenshots -->
+              <ul id="gallery-screenshots-edmeplus" style="display:none">
+                <li image="assets/images/projects/edmeplus_screenshot_1.png" title="eDMEplus" /></li>
+              </ul>
+
 
               <hr class="divider" />
               <!-- Indystar -->
@@ -218,7 +228,7 @@
                 <div class="col-xs-12">
                   <h4>Gannett/Indystar <span class="tenure">(2013 - 2017)</span></h4>
                   <h5>Digital Developer</h5>
-                  <p>
+                  <div>
                     Synopsis/Role:
                     <ul>
                       <li>Full stack developer on waterfall team of:
@@ -232,7 +242,7 @@
                         <li>Custom solutions for digital marketing projects, key accounts, newsroom collaborations, and internal projects.</li>
                         <li>We completed probably 20 projects over 4 years.  Some projects were quickly built and lived a short time - others were seasonal/recurrent - others were ongoing concerns.</li>
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
 
@@ -304,7 +314,7 @@
               <!-- ICPV -->
               <div class="item row">
                 <div class="col-xs-12 col-sm-6">
-                  <a href="icpv" target="_blank">
+                  <a href="demos/icpv" target="_blank">
                     <h3 class="title">Indystar Campaign Performance Visualization (2016)</h3>
                     <img class="img-responsive project-image" src="assets/images/projects/icpv_1.png" alt="IndystarCampaignPerformance Visualization Image"
                     />
@@ -455,7 +465,7 @@
               <!-- KentuckyKingdom -->
               <div class="item row">
                 <div class="col-xs-12 col-sm-6">
-                  <a href="kentuckykingdom" target="_blank">
+                  <a href="demos/kentuckykingdom" target="_blank">
                     <h3 class="title">Kentucky Kingdom (2015)</h3>
                     <img class="img-responsive project-image" src="assets/images/projects/kentuckykingdom-display.png" alt="KentuckyKingdom Image"
                     />
@@ -552,7 +562,7 @@
               <!-- another IndyStar project -->
               <div class="item row">
                 <div class="col-xs-12">
-                  <p>
+                  <div>
                     We did alot of neat stuff at Indystar over 4 years (20-30 projects).
                     <ul>
                       <li>DataIngestor - ingest local events data from WestWorldMedia xml feeds, into our events platform.</li>
@@ -565,7 +575,7 @@
                       <li>Replicated these solutions for other newspapers/markets in Indiana and Kentucky</li>
                     </ul>
                     My portfolio doesn't include all the things we did, but hopefully you get the idea from the samples above.
-                  </p>
+                  </div>
                 </div>
               </div>
               <!--//item-->
@@ -580,7 +590,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-6">
                   <h3 class="title">VP of Technology (2011 - 2014)</h3>
-                  <p>
+                  <div>
                     I inherited this project in a mature state.
                     I'm still VP of Technology, but it's more of an honorary title - since I'm always available to provide insights and good counsel.
                     I worked part-time for ViewYou.com as a contracted developer while I was in grad school.  It's been a few years, but here's what I remember. :)
@@ -593,7 +603,7 @@
 
                     </ul>
                     I received word recently that this project is being sunsetted.
-                  </p>
+                  </div>
                   <p>
                     <strong>Tech:</strong> AWS [EC2, S3, RDS], Rackspace, MongoDB, Mysql, PHP5, Laravel, Javascript, JQuery, HTML, CSS, Bootstrap, CloudFlare
                   </p>
@@ -637,7 +647,6 @@
                   <a href="https://linkedin.com/in/james-earlywine" target="_blank">linkedin.com/in/james-earlywine</a>
                 </li>
                 <li>
-                  </i>
                   <span class="sr-only">Resume:</span>
                   <a href="http://james.earlywine.info/portfolio/assets/resume/james_earlywine_resume-april_2018.docx"
                     target="_blank">james_earlywine_resume-april_2018.docx</a>
@@ -662,7 +671,8 @@
                     learner and has both broad and deep understanding of how to develop reliable and maintainable software.
                     He learned his way around our existing systems quickly, and helped guide us in using the best practices
                     and tools available for new feature development. I would recommend James to any team that needs a highly
-                    skilled, dependable UI team member.</p>
+                    skilled, dependable UI team member.
+                  </p>
                 </blockquote>
                 <p class="source">
                   <span class="name">Edward Delaney</span>
@@ -812,13 +822,17 @@
   <!--//footer-->
 
   <!-- Javascript -->
-  <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script> -->
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/simplelightbox/dist/simple-lightbox.min.js"></script>
+
   <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script>
   <!-- github calendar plugin
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
     <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
+  -->
     <!-- github activity plugin -->
   <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script> -->
   <!-- <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script> -->

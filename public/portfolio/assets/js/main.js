@@ -62,4 +62,17 @@ jQuery(document).ready(function($) {
     // GitHubActivity.feed({ username: "caseyscarborough", selector: "#ghfeed" });
 
 
+    /* screenshot galleries */
+    window.screenshotGalleryOptions = {
+      alertError: false,
+      captionSelector: 'self',
+      sourceAttr: 'image'
+    };
+    window.galleries = {
+      edmeplus: $('ul#gallery-screenshots-edmeplus li').simpleLightbox(window.screenshotGalleryOptions),
+    };
+    window.galleries.edmeplus.on('open.simplelightbox', () => console.log('opened edmeplus gallery'));
+
+    //
+
 });
