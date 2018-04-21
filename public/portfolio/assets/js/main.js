@@ -62,7 +62,9 @@ jQuery(document).ready(function($) {
     // GitHubActivity.feed({ username: "caseyscarborough", selector: "#ghfeed" });
 
 
-    /* screenshot galleries */
+    /* screenshot galleries
+      http://simplelightbox.com/
+    */
     window.screenshotGalleryOptions = {
       alertError: false,
       captionSelector: 'self',
