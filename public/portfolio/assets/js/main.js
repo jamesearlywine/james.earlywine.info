@@ -73,8 +73,6 @@ jQuery(document).ready(function($) {
     window.galleries = {
       edmeplus: $('ul#gallery-screenshots-edmeplus li').simpleLightbox(window.screenshotGalleryOptions),
     };
-    window.galleries.edmeplus.on('open.simplelightbox', () => console.log('opened edmeplus gallery'));
 
-    //
 
 });
