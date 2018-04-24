@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="./" target="_blank"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Weinre Debug Console for debugging Chrome on iOS -->
+        <!-- <script src="http://indystardev.com:8090/target/target-script-min.js#anonymous"></script>
+        
+        <!-- image for social media that scrapes site for image -->
+        <meta property="og:image" content="//digital.indystar.com/"/>
+        <title>Turn Up at the Angie's List Grand Prix of Indianapolis</title>
+        
+        <!-- for toggling viewport zooming (disabling resets it / effectively a zoom-out) -->
+        <script src="common/js/lib/zoom-switch.js"></script>
+        
+        <!-- Browser Detect -->
+        <script src="common/js/lib/browser-detect.js"></script>
+        <!-- Environmental Variables Container -->
+        <script src="environment.js"></script>
+        <!-- fixes malfunctioning console.log and console.warn functions for iPad Chrome -->
+        <!-- <script src="common/js/lib/logger.js"></script> <!-- onscreen logging (see environment.js for config switch) -->
+        <script src="common/js/lib/ipad-console-fix.js"></script> <!-- replaces console.log and console.warm -->
+    
+        
+        <!-- Angular UI styles -->
+        <link href="common/bower_components/angular-ui/build/angular-ui.min.css" rel="stylesheet">
+        
+        <!-- Normalize.css makes browsers render all elements more consistently and in line with modern standards -->
+        <link href="common/css/normalize.css" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <!-- License: https://github.com/twbs/bootstrap/blob/master/LICENSE -->
+        <link  href="common/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Default responsive style templates -->
+        <link href="common/css/responsive.css" rel="stylesheet">
+        
+        <!-- Custom styles -->
+        <link href="common/css/styles.css" rel="stylesheet">
+        
+        <!-- Web fonts -->
+        <link href="common/fonts/fontello/css/fontello.css" rel="stylesheet">
+        
+        <!-- Spinner -->
+        <link href="common/css/spinner.css" rel="stylesheet"/>
+
+        <!-- jle stuff -->
+        <link href="common/css/jle.css" rel="stylesheet"/>
+        
+        
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and CSS3 media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>    </head>
+        
+    </head>
+    <body   ng-app="algpi"
+            
+            style="overflow: auto !important"
+            ng-class="{
+                'mobile'      : browserDetection.isMobile,
+                'desktop'     : browserDetection.isDesktop,
+                'ipad'        : browserDetection.isiPad,
+                'not-ipad'    : browserDetection.isNotiPad,
+                'ie'          : browserDetection.isIE,
+                'webkit'      : browserDetection.isWebkit,
+                'android'     : browserDetection.isAndroid,
+                'not-android' : browserDetection.isNotAndroid,
+                'firefox'     : browserDetection.isFirefox,
+                'chrome'      : browserDetection.isChrome,
+                'chrome-ios'  : browserDetection.isChromeIOS,
+                'iphone4'     : browserDetection.isiPhone4,
+                'iphone5'     : browserDetection.isiPhone5,
+                'ios'         : browserDetection.isIOS
+            }"
+            
+            >
+        <!-- busy/loading animation -->
+        <span class="spinner-backdrop"
+                ng-show="showBackdrop"
+        >
+            <span   us-spinner="{
+                        lines     :13,
+                        length    :28,
+                        width     :14,
+                        radius    :42,
+                        scale     :1.00,
+                        corners   :1.0,
+                        opacity   :0.25,
+                        rotate    :0,
+                        direction :1,
+                        speed     :1.0,
+                        trail     :60,
+                        color     :'white'
+                    }"
+                    spinner-key="busy"
+            >
+            </span>    
+            <div class="spinner-message" 
+                 ng-bind="BusyAnimationService.busyMessage"
+            ></div> 
+        </span>
+        
+        <!-- desktop cobrand header
+        <iframe id="indystar-cobrand" src="//www.indystar.com/services/cobrand/header" class="indystar-cobrand-header desktop-cobrand"></iframe>
+        
+        <!-- mobile cobrand header 
+        <div class="INI_indystarNavBox mobile-cobrand">
+			<div class="INI_navLogo">
+				<a href="http://www.indystar.com" target="_self"><img src="//interactives.indystar.com/styleguide/images/site-nav-logo.png" width="124" height="40" /></a>
+			</div>
+		</div>
+        -->
+        
+        
+        <div ui-view
+             ng-animate
+             class="app-content content-container-fluid">
+        </div>
+        
+        
+        
+        
+        <!-- co-brand footer 
+        <div class="footer-container content-container-fluid"
+                ng-if="!isAdminView"
+        >
+            <div class="content-container">
+                <p>All rights reserved. Users of this site agree to the <a href="http://static.indystar.com/terms">Terms of Service</a>, <a href="http://static.indystar.com/privacy">Privacy Notice/Your California Privacy Rights</a>, and <a href="http://static.indystar.com/privacy/#ad_choices">Ad Choices</a></p>
+            </div>
+        </div><!-- end .footer-container -->
+        
+        <!-- IndyStar cobrand header
+        <script>
+        	var indystarCobrand = document.getElementById("indystar-cobrand");
+        	indystarCobrand.scrolling = "no";
+        </script>
+        -->
+
+        <!-- 3rd Party Dependencies -->    
+        <script src="common/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="common/bower_components/angular/angular.js"></script>
+        <script src="common/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="common/bower_components/angular-ui/build/angular-ui.min.js"></script>
+        <script src="common/bower_components/angular-animate/angular-animate.js"></script>
+        <script src="common/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="common/bower_components/ui-router-extras/release/ct-ui-router-extras.min.js"></script>
+        <script src="common/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="common/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="common/bower_components/angular-debounce/dist/angular-debounce.min.js"></script>
+        <script src="common/bower_components/lodash/dist/lodash.min.js"></script>
+        <script src="common/bower_components/ng-lodash/build/ng-lodash.min.js"></script>
+        <script src="common/bower_components/spin.js/spin.min.js"></script>
+        <script src="common/bower_components/angular-spinner/angular-spinner.min.js"></script>
+        <script src="common/bower_components/angular-facebook/lib/angular-facebook.js"></script>
+        <script src="common/bower_components/angular-google-gapi/angular-google-gapi.min.js"></script>
+        <script src="common/bower_components/satellizer/satellizer.js"></script>
+        <script src="common/bower_components/angular-touch/angular-touch.min.js"></script>
+        
+        <!-- pan/zoom functionality -->
+        <script src="common/bower_components/hamsterjs/hamster.js"></script>
+        <script src="common/bower_components/angular-mousewheel/mousewheel.js"></script>
+        <script src="common/bower_components/angular-pan-zoom/release/panzoom.js"></script>
+        <link   src="common/bower_components/angular-pan-zoom/release/panzoomwidget.css" rel="stylesheet"/>
+        
+        <!-- jquery form validation -->
+        <script src="common/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="common/bower_components/jquery-validation/dist/additional-methods.min.js"></script>
+        <script src="common/bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js"></script>
+
+        <!-- responsive javascript -->
+        <script src="common/js/lib/responsive.js"></script>
+        
+        <!-- jQuery form validation plugin -->
+        <script src="common/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="common/bower_components/jquery-validation/dist/additional-methods.min.js"></script>
+        <script>
+            // http://jqueryvalidation.org/documentation/ for rule declaration options
+            // example http://jqueryvalidation.org/phoneUS-method
+            $(function() {
+                // fallbasck javascript form validation for devices that lack
+                // HTML5 form validation support
+                window.indystar_project = {};
+                window.indystar_project.formValidationRules = {
+                    rules: {
+                        ''   : { // first name
+                            required : true
+                        },
+                        ''  : { // last name
+                            required : true  
+                        },
+                        ''  : { // email
+                            required : true,
+                            email    : true
+                        },
+                        ''  : { // phone number
+                            required : true,
+                            phoneUS  : true
+                        }
+                    },
+                    submitHandler: function(form) {
+                        window.disableSubmitButton();
+                        form.submit();
+                    }
+                };
+                // enable form validation for #contact-form using validationRules above
+                $('#form').validate(window.indystar_project.formValidationRules);
+                //$('#ss-form').validate(); // HTML5 polyfill
+            });
+        </script>
+
+        <!-- App Files -->
+        <script src="app.js"></script>
+        
+            <!-- Routable Modules/Controllers -->
+            <script src="app/home/home.js"></script>
+            
+            
+            <!-- Directives -->
+            <script src="common/js/directives/race-map/race-map.js"></script>
+            <script src="common/js/directives/panzoom-race-map/panzoom-race-map.js"></script>
+            <script src="common/js/directives/ipad-race-map/ipad-race-map.js"></script>
+            
+            <!-- Services -->
+            <script src="common/js/services/ShareService.js"></script>
+            <script src="common/js/services/OmnitureService.js"></script>
+            <script src="common/js/services/BusyAnimationService.js"></script>
+            <script src="common/js/services/SubmissionService.js"></script>
+            <script src="common/js/services/BubblesService.js"></script>
+            <script src="common/js/services/TurnShareService.js"></script>
+            
+            <!-- Filters -->
+            
+            <!-- Redirect unsupported browsers -->
+            <script>
+                if (window.isIE && window.IEVersion < 10) {
+                    // window.location.href = 'unsupported.html';
+                }
+            </script>
+    </body>
+</html>

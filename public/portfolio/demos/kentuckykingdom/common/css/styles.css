@@ -1,0 +1,952 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+
+body
+{
+	font-size:16px;
+	background:#F47E20 url('../images/background.jpg') top center no-repeat;
+	color:#333;
+}
+
+.page
+{
+	margin-bottom:40px;
+}
+
+#header
+{
+	border-radius:0;
+	border:none;
+	background-color:#FFE500;
+	margin-bottom:0;
+}
+
+#header a
+{
+	text-decoration:none;
+	color:#333;
+}
+
+.indystar-cobrand-header
+{
+	width:100%;
+	border:0;
+	overflow:hidden;
+	height:50px;
+}
+
+@media screen and (min-width:768px)
+{
+	.indystar-cobrand-header
+	{
+		height:40px;
+	}
+}
+
+.indystar-brand
+{
+	width:175px;
+	margin-top:0px;
+}
+
+@media screen and (min-width:570px)
+{
+	.indystar-brand
+	{
+		margin-top:-10px;
+	}
+}
+
+.subheader-container
+{
+	text-align:center;
+	background-color:#009FDF;
+	height:40px;
+	color:#FFF;
+	padding-top:3px;
+	margin-top:-5px;
+}
+
+@media screen and (min-width:640px)
+{
+	.subheader-container
+	{
+		padding-top:0px;
+	}
+}
+
+.subheader-container-thin
+{
+	height:5px;
+	margin-top:-5px;
+	background-color:#009FDF;
+}
+
+.subheader-container .subheadline
+{
+	letter-spacing:0px;
+	font-size:1.25em;
+	font-family: 'Oswald', sans-serif;
+	font-weight:500;
+}
+
+@media screen and (min-width:540px)
+{
+	.subheader-container .subheadline
+	{
+		letter-spacing:4px;
+	}
+}
+
+@media screen and (min-width:640px)
+{
+	.subheader-container .subheadline
+	{
+		letter-spacing:5px;
+		font-size:1.8em;
+	}
+}
+
+@media screen and (min-width:768px)
+{
+	.subheader-container .subheadline
+	{
+		letter-spacing:8px;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.subheader-container .subheadline
+	{
+		letter-spacing:15px;
+	}
+}
+
+@media screen and (min-width:1200px)
+{
+	.subheader-container .subheadline
+	{
+		letter-spacing:22px;
+	}
+}
+
+.banner .heading
+{
+	color:#FF9C00;
+	font-weight:400;
+	font-size:1.5em;
+}
+
+.banner .description
+{
+	color:#FFF;
+	font-weight:400;
+	font-size:1.5em;
+}
+
+.banner .offer-headline
+{
+	text-align:center;
+}
+
+.kentucky-kingdom-brand
+{
+	text-align:center;
+}
+
+.kentucky-kingdom-brand img
+{
+	max-width:300px;
+}
+
+
+@media screen and (min-width:640px)
+{
+	.banner .offer-container
+	{
+		width:50%;
+		float:left;
+	}
+
+	.banner .headline-container
+	{
+		width:50%;
+		float:left;
+	}
+}
+
+.banner .offer
+{
+	width:100%;
+	margin-top:-1px;
+}
+
+@media screen and (min-width:992px)
+{
+	.banner .offer
+	{
+		width:88%;
+	}
+}
+
+@media screen and (min-width:1200px)
+{
+	.banner .offer
+	{
+		width:490px;
+	}
+}
+
+.banner .headline
+{
+	width:100%;
+}
+
+@media screen and (min-width:640px)
+{
+	.banner .headline
+	{
+		margin-top:10px;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.banner .headline
+	{
+		width:auto;
+		margin-top:-5px;
+		margin-bottom:10px;
+	}
+}
+
+@media screen and (min-width:1200px)
+{
+	.banner .headline
+	{
+		width:540px;
+	}
+}
+
+.banner .quotes
+{
+	height:110px;
+	color:#FFF;
+	background: -webkit-linear-gradient(right, rgba(245, 128, 32, 0), #F58020, rgba(245, 128, 32, 0));
+    background: -o-linear-gradient(right, rgba(245, 128, 32, 0), #F58020, rgba(245, 128, 32, 0));
+    background: -moz-linear-gradient(right, rgba(245, 128, 32, 0), #F58020, rgba(245, 128, 32, 0));
+    background: linear-gradient(to right, rgba(245, 128, 32, 0), #F58020, rgba(245, 128, 32, 0));
+	z-index:-1;
+	text-align:center;
+	margin-top:0;
+	padding:10px 0;
+}
+
+@media screen and (min-width:640px)
+{
+	.banner .quotes
+	{
+		height:100px;
+		margin-top:10px;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.banner .quotes
+	{
+		height:75px;
+		margin-top:-18px;
+	}
+}
+
+.quote
+{
+	font-size:1em;
+	line-height:1em;
+	font-family:'Oswald', sans-serif;
+}
+
+@media screen and (min-width:992px)
+{
+	.quote
+	{
+		font-size:1.25em;
+	}
+}
+
+.author
+{
+	font-size:0.75em;
+	line-height:1.25em;
+	display:block;
+	font-family:'Oswald', sans-serif;
+}
+
+.link-label
+{
+	color:#0075A7;
+	font-size:1.10em;
+	line-height:1em;
+	margin-top:10px;
+	font-weight:500;
+}
+
+.left-border
+{
+	border-left:0;
+}
+
+@media screen and (min-width:992px)
+{
+	.left-border
+	{
+		border-left:1px solid #973500;
+	}
+}
+
+.right-border
+{
+	border-right:0;
+}
+
+@media screen and (min-width:992px)
+{
+	.right-border
+	{
+		border-right:1px solid #973500;
+	}
+}
+
+.bottom-border
+{
+	border-bottom:1px solid #973500;
+}
+
+@media screen and (min-width:640px)
+{
+	.bottom-border
+	{
+		border-bottom:1px solid #973500;
+	}
+}
+
+.bottom-border-responsive
+{
+	border-bottom:1px solid #973500;
+}
+
+@media screen and (min-width:640px)
+{
+	.bottom-border-responsive
+	{
+		border-bottom:1px solid #973500;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.bottom-border-responsive
+	{
+		border-bottom:0;
+	}
+}
+
+.link-icon
+{
+	font-size: 1.5em;
+	background-color:#0075A7;
+	color: #FFF;
+	padding: 3px;
+	border-radius: 50%;
+	text-align: center;
+	margin-right: 10px;
+	box-shadow:2px 2px 5px #333;
+	border:1px solid #00B6FF;
+	margin-top:10px;
+	display:inline-block;
+}
+
+/*** .link-button: for links that contain an icon and label only ***/
+.link-button:link,
+.link-button:visited
+{
+	display:block;
+	padding:0px 5px 10px 5px;
+	text-decoration:none;
+	background-color:transparent;
+}
+
+.link-button:hover .link-label
+{
+	text-decoration:none;
+	color:#014683;
+}
+
+.link-button:hover .link-icon
+{
+	background-color:#014683;
+}
+
+/*** .link-button-simple: for buttons with a simple icon and label (used for Back button) ***/
+.link-button-simple:link,
+.link-button-simple:visited
+{
+	color:#000;
+	font-size:1.10em;
+	font-weight:500;
+	text-decoration:none;
+	padding:10px 10px 10px 5px;
+	background-color:transparent;
+}
+
+.link-button-simple:hover
+{
+	text-decoration:none;
+	color:#000;
+	background-color:rgba(255, 255, 255, 0.4);
+}
+
+/*** .link-section: for links that contain blocks of text ***/
+.link-section
+{
+	padding:0px;
+}
+
+/*** .link-title: line that contains link-icon and link-label ***/
+.link-section .link-title
+{
+	display:block;
+	float:none;
+	clear:both;
+	position:relative;
+	min-height:50px;
+}
+
+.link-section .link-icon
+{
+	font-size: 1.5em;
+	background-color:#0075A7;
+	color: #FFF;
+	padding: 3px;
+	border-radius: 50%;
+	text-align: center;
+	float: left;
+	margin-right: 10px;
+	box-shadow:2px 2px 5px #333;
+	border:1px solid #00B6FF;
+	margin-top:0px;
+	display:block;
+}
+
+.link-section:hover .link-icon
+{
+	background-color:#014683;
+}
+
+.link-section .link-label
+{
+	padding-top:10px;
+	position:relative;
+	display:block;
+	font-size:1.25em;
+	line-height:1em;
+}
+
+.link-section:hover .link-label
+{
+	color:#014683;
+}
+
+.link-section .link-content
+{
+	display:block;
+	float:none;
+	clear:both;
+	margin-top:10px;
+	position:relative;
+}
+
+.link-section .link-area
+{
+	text-decoration:none;
+	color:inherit;
+	display:block;
+	padding:5px;
+}
+
+/*** .link-area: clickable area ***/
+.link-section .link-area:hover
+{
+	background-color:rgba(255, 255, 255, 0.4);
+}
+
+#main
+{
+	margin-top:15px;
+}
+
+/*** .title-container: includes page title and bottom border ***/
+.title-container
+{
+	border-bottom:4px solid #F58020;
+	margin-bottom:10px;
+}
+
+.title
+{
+	color:#FFF;
+	font-size:1.5em;
+	text-shadow:1px 1px 3px #973500;
+	text-align:center;
+}
+
+@media screen and (min-width:992px)
+{
+	.title
+	{
+		text-align:left;
+	}
+}
+
+.section-title
+{
+	color:#973500;
+	font-size:1.25em;
+}
+
+/*** .directions-map: container for Google Map ***/
+.directions-map
+{
+	width: 100%;
+}
+
+.directions-map iframe
+{
+	width: 100%;
+	height:360px;
+	border:0;
+	z-index: 3;
+}
+
+/*** .directions-map a: clickable area on top of the Google Map ***/
+.directions-map a
+{
+	position:absolute;
+	bottom:0;
+	left:0;
+	display:inline-block;
+	width:100%;
+	height:370px;
+	z-index:5;
+}
+
+.footer
+{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.footer-content
+{
+	font-family:'Oswald', sans-serif;
+	text-align:center;
+	color:#C64600;
+	font-size:1.25em;
+}
+
+@media screen and (min-width:640px)
+{
+	.footer-content
+	{
+		color:#F58020;
+		font-size:1.10em;
+	}
+}
+
+@media screen and (min-width:768px)
+{
+	.footer-content
+	{
+		font-size:1.35em;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.footer-content
+	{
+		font-size:1.75em;
+	}
+}
+
+@media screen and (min-width:1200px)
+{
+	.footer-content
+	{
+		font-size:2em;
+	}
+}
+
+.footer-content .phrase
+{
+	display:block;
+}
+
+@media screen and (min-width:640px)
+{
+	.footer-content .phrase
+	{
+		display:inline;
+	}
+}
+
+/*** .dash: used to separate the phrases on a large screen ***/
+.footer-content .dash
+{
+	display:none;
+}
+
+@media screen and (min-width:640px)
+{
+	.footer-content .dash
+	{
+		display:inline;
+	}
+}
+
+/*
+.icon-back
+{
+	font-size:0.875em !important;
+}*/
+
+.center-text
+{
+	text-align:center;
+	margin:20px 0 20px 0;
+}
+
+.form
+{
+	max-width:95%;
+	margin: 0 auto;
+}
+
+.form .radio label
+{
+	padding:10px 20px;
+	width:100%;
+}
+
+.form .radio
+{
+	font-size:1.1em;
+}
+
+.btn
+{
+	box-shadow:2px 2px 5px #333;
+	border:1px solid #00B6FF;
+}
+
+.btn:hover
+{
+	box-shadow:2px 2px 5px #333;
+	border:1px solid #00B6FF;
+	background-color: #014683;
+}
+
+/*** .btn-lg: large rectangular button with label ***/
+.btn-lg
+{
+	font-size:1.25em;
+	padding:5px 15px 10px 15px;
+}
+
+.btn .icon
+{
+	font-size:1.25em;
+}
+
+/*** .side-form: source survey on the side panel ***/
+.side-form
+{
+	display:none;
+}
+
+@media screen and (min-width:992px)
+{
+	.side-form
+	{
+		display:block;
+		position:relative;
+		margin-top:40px;
+	}
+}
+
+/*** .side-form: source survey underneath the coupon ***/
+.bottom-form
+{
+	display:block;
+}
+
+@media screen and (min-width:992px)
+{
+	.bottom-form
+	{
+		display:none;
+	}
+}
+
+/*** .form-buttons: container for form buttons at the bottom of a form (i.e. submit) ***/
+.form-buttons
+{
+	text-align:center;
+	padding:15px 0;
+}
+
+.btn-submit
+{
+	font-size:1.25em;
+	width:30%;
+}
+
+.error
+{
+	color:#F00;
+}
+
+.alert
+{
+	margin-top:15px;
+}
+
+.bold-text
+{
+	font-weight:bold;
+}
+
+/*** .route-container: for the static map ***/
+.route-container
+{
+	text-align:center;
+}
+
+.route
+{
+	border:1px solid #333;
+	width:100%;
+}
+
+@media screen and (min-width:480px)
+{
+	.route
+	{
+		width:auto;
+	}
+}
+
+@media screen and (min-width:992px)
+{
+	.route
+	{
+		width:100%;
+	}
+}
+
+/*** .attractions: includes attractions thumbnail and description ***/
+.attractions
+{
+	padding:20px 0px;
+}
+
+/*** .footnote: tiny text notes ***/
+.footnote
+{
+	font-size:0.75em;
+}
+
+.modal-body .share
+{
+	float:none;
+	clear:both;
+	display:block;
+}
+
+.clear-float
+{
+	float:none;
+	clear:both;
+}
+
+.modal-body
+{
+	min-height:300px;
+}
+
+.share-body
+{
+	width:260px;
+	margin:0 auto !important;
+}
+
+.hideshare-list
+{
+	position:relative !important;
+	display:block !important;
+	width:260px !important;
+	bottom:0 !important;
+	padding:0 !important;
+	top:0 !important;
+}
+
+.hideshare-list .icon
+{
+	font-size:1.25em;
+	margin-right:10px;
+}
+
+.hideshare-list li
+{
+	list-style:none;
+	padding:5px;
+	font-size:1.5em;
+	text-indent:0px;
+	border:1px solid #337AB7;
+	width:100%;
+	margin:0;
+	display:block;
+	margin: 5px 0px;
+}
+
+.hideshare-list li a
+{
+	display:block;
+	text-decoration:none;
+}
+
+img.coupon-preview
+{
+	width:100%;
+	box-shadow:1px 1px 5px #333;
+}
+
+.calendar-container
+{
+	text-align:center;
+}
+
+.calendar
+{
+	width:100%;
+	max-width:768px;
+	box-shadow:1px 1px 5px #333;
+	margin-bottom:20px;
+	border:10px solid #FFF;
+}
+
+.blueimp-gallery-controls>.indicator
+{
+	display:none !important;
+}
+
+/*** .xlg-text: extra large text ***/
+.xlg-text
+{
+	font-size:1.5em;
+	line-height:1em;
+	color:#C64600;
+}
+
+@media screen and (min-width:480px)
+{
+	.xlg-text
+	{
+		font-size:2em;
+	}
+}
+
+.thumbnail
+{
+	width:100%;
+}
+
+
+/**
+ * --jle stuff
+ */
+
+/**
+ * Coupon Printing
+ */
+@media screen {
+    body {
+        display: block;
+    }
+    .printable-coupon {
+        display: none;
+    }
+}
+@media print {
+    body {
+        display: none;
+    }
+    .printable-coupon {
+        display: block;
+    }
+}
+
+/**
+ * Hide the share toggle display button from the modal content
+ * (always on)
+ */
+#share-button {
+    display: none;
+}
+
+/**
+ * for showing/hiding things like confirmation
+ */
+.not-displayed {
+    display: none !important;
+}
+.displayed {
+    display: block !important;
+}
+.desktop #indystar-cobrand {
+    max-height: 40px;
+}
+
+/*********************************
+              COBRAND
+*********************************/
+#cobrand
+{
+  overflow:hidden;
+}
+
+.desktop-cobrand
+{
+  width:100%;
+  border:none;
+  height:40px;
+  margin:0;
+  overflow:hidden;
+}
+
+.cobrand-header-container
+{
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+.cobrand-header
+{
+  color: yellow;
+  font-weight: 550;
+  margin: auto auto;
+  text-align: center;
+  font-family: Arial;
+  padding-top:8px;
+}

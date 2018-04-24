@@ -1,0 +1,437 @@
+<!-- Slick gallery styles (http://kenwheeler.github.io/slick/) -->
+<link rel="stylesheet" type="text/css" href="common/js/slick-gallery/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="common/js/slick-gallery/slick/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="common/css/slick-styles.css">
+<!-- Slick-lightbox styles (http://mreq.github.io/slick-lightbox/) -->
+<link rel="stylesheet" type="text/css" href="common/js/slick-lightbox/src/styles/slick-lightbox.css">
+
+<div class="header-container content-container">
+    <div class="grid-row">
+        <div class="grid-col-sm-4">
+            <img class="img-responsive" src="common/img/algpi-logo.png" alt="Angie's List Grand Prix of Indianapolis">
+        </div><!-- end .grid-col -->
+        
+        <div class="grid-col-sm-8">
+            <h1 class="large-headline">TURN UP</h1><img class="car" src="common/img/car.png">
+            <h2 class="small-headline">AT THE ANGIE'S LIST GRAND PRIX OF INDIANAPOLIS <span class="headline-hashtag">#GPofIndy</span></h2>
+        </div><!-- end .grid-col -->
+    </div><!-- end .grid-row -->
+</div><!-- end .main-container -->
+
+<div class="main-container content-container">
+    <div class="grid-row form-container">
+        <div class="grid-col-md-5 promotion-container">
+            <h3 class="section-title">Turn Up and Enter to win VIP Grand Prize</h3>
+            <p>The Angie’s List&reg; Grand Prix of Indianapolis&reg; is back. Find out just how Up Close and Personal it is by clicking on each of the turns or stars below on the Turn Up map. You'll get great insider tips and descriptions! It’s a whole new way to experience IMS in May.</p>
+            <p>Plus, register for a chance to win a VIP Grand Prize package for four. Package includes Penthouse seats—the newest seats at the track—with views of all 14-turns, plus Bronze Badges for VIP track access!</p>
+            <p><a ng-click="openPrizeModal()" class="link"><i class="icon icon-right-circled"></i>Grand Prize Details</a></p>
+            <p><a ng-click="openRulesModal()" class="link"><i class="icon icon-right-circled"></i>Official Rules</a></p>
+            <p><a href="http://www.indianapolismotorspeedway.com/events/grandprix/event-info/schedule" class="link" target="_blank"><i class="icon icon-right-circled"></i>Event Schedule</a></p>
+        </div><!-- end .grid-col -->
+        
+        <div class="grid-col-md-7 no-padding">
+            <div class="grid-row no-padding">
+                <div class="grid-col-sm-5 signup-form">
+                    <form id="entryForm"
+                          name="entryForm"
+                          onsubmit="event.preventDefault();"
+                          ng-submit="validateEntry(entryForm)"
+                          ng-validate="entryFormValidationOptions"
+                    >
+                    <div class="form-field">
+                      <input type="text" 
+                             id="first_name" 
+                             name="first_name" 
+                             class="input-textbox" 
+                             placeholder="First Name" 
+                             ng-model="formData.first_name">
+                    </div><!-- end .form-field -->
+                    
+                    <div class="form-field">
+                      <input type="text" 
+                             id="last_name" 
+                             name="last_name" 
+                             class="input-textbox" 
+                             placeholder="Last Name" 
+                             ng-model="formData.last_name">
+                    </div><!-- end .form-field -->
+                    
+                    <div class="form-field">
+                      <input type="text" 
+                             id="email" 
+                             name="email" 
+                             class="input-textbox" 
+                             placeholder="Email Address" 
+                             ng-model="formData.email">
+                    </div><!-- end .form-field -->
+                    
+                    <div class="form-field">
+                      <input type="text" 
+                             id="phone" 
+                             name="phone" 
+                             class="input-textbox" 
+                             ng-model="formData.phone"
+                             placeholder="Phone (optional)">
+                    </div><!-- end .form-field -->
+                    
+                    <div class="form-buttons">
+                      <a class="button button-green button-submit"
+                         ng-click="submit('entryForm')"
+                      >
+                        <i class="icon icon-edit"></i> Sign Up
+                      </a>
+                      <p>&nbsp;</p>
+                    </div><!-- end .form-buttons -->
+                    </form>
+                </div>
+                <div class="grid-col-sm-1 divider-container center"
+                     ng-hide="browserDetection.isiPhone4"
+                >
+                    <img src="common/img/divider-vertical.png" alt="divider" class="divider-vertical">
+                    <img src="common/img/divider-horizontal.png" alt="divider" class="divider-horizontal">
+                </div>
+                <div class="grid-col-sm-6 social-signup center"
+                     ng-hide="browserDetection.isiPhone4"
+                >
+                    <a class="button button-facebook"
+                        ng-click="authenticate('facebook')"
+                        ng-hide="1 == 0"
+                    ><i class="icon icon-facebook-squared"></i> Sign Up via Facebook</a>
+                    <a class="button button-twitter"
+                        ng-click="authenticate('twitter')"
+                        ng-hide="1 == 0"
+                    ><i class="icon icon-twitter"></i> Sign Up via Twitter</a>
+                    <a class="button button-google"
+                        ng-click="authenticate('google')"
+                        ng-hide="1 == 0"
+                    ><i class="icon icon-googleplus-rect"></i> Sign Up via Google</a>
+                    
+                    <!--<p>&nbsp;</p>-->
+                    <!-- video -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pZDnfOz7O8w?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>&nbsp;</p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GRbNqXHbXZ4?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end .grid-col -->
+    </div><!-- end .form-container -->
+    
+    <!--
+    <div class="grid-row">
+      <div class="grid-col-sm-12">
+        <div id="slick-gallery-video" class="slick-gallery-video">
+          <div class="video">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GRbNqXHbXZ4?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          
+          <div class="video">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pZDnfOz7O8w?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          
+          <div class="video">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mhD0LdC8dTU?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <div class="grid-row">
+        <div class="grid-col-xs-12" style="border:1px solid #CCC;">
+            <!-- racemap testing buttons 
+            <p>test buttons</p>
+            <button ng-click="toggleMobile()">Toggle Mobile</button>
+            Current Mode: <span ng-bind="isMobile ? 'mobile' : 'desktop'"></span>
+            <button ng-click="toggleIpad()">Toggle iPad</button>
+            isiPad?: <span ng-bind="isiPad ? 'yes' : 'no'"></span>
+            <!--
+            <br/>
+            <button ng-click="enableZoom()">Enable Zoom</button>
+            <button ng-click="disableZoom()">Disable Zoom</button>
+            -->
+            
+            <!--
+            <br/>
+            Show Turn #:
+            <select ng-model="turnNumber">
+                <option value="none">None</option>
+                <option value="1">Turn 1</option>
+                <option value="2">Turn 2</option>
+                <option value="3">Turn 3</option>
+                <option value="4">Turn 4</option>
+                <option value="5">Turn 5</option>
+                <option value="6">Turn 6</option>
+                <option value="7">Turn 7</option>
+                <option value="8">Turn 8</option>
+                <option value="9">Turn 9</option>
+                <option value="10">Turn 10</option>
+                <option value="11">Turn 11</option>
+                <option value="12">Turn 12</option>
+                <option value="13">Turn 13</option>
+                <option value="14">Turn 14</option>
+            </select>
+            -->
+            <!--
+            <button ng-click="goToTurn(1)">Go to Turn #1</button>
+            <button ng-click="goToTurn(8)">Go to Turn #8</button>
+            <button ng-click="goToTurn('none')">Reset</button>
+            -->
+            
+            <panzoom-race-map
+                ng-if="!isMobile && showMap && !isiPad"
+                day-number="dayNumber"
+                ng-mouseenter="enableZooming(2000)"
+                ng-mouseleave="disableZooming(0)"
+                ng-click="enableZooming(0)"
+                ng-class="{
+                    'zoom-cursor' : AppConfig.panzoomRaceMap.panZoomInit.zoomOnMouseWheel
+                }"
+                api="panzoomRaceMapApi"
+            ></panzoom-race-map>
+            <ipad-race-map
+                ng-if="!isMobile && showMap && isiPad"
+                day-number="dayNumber"
+                api="panzoomRaceMapApi"
+            ></ipad-race-map>
+            <race-map
+                ng-if="isMobile && showMap"
+                day-number="dayNumber"
+                api="raceMapApi"
+            ></race-map>
+            
+        </div>
+    </div>
+     
+     <!-- SLICK CAROUSEL -->
+    <div class="grid-row gallery-container">
+      <div class="grid-col-sm-12">
+        <div id="slick-gallery" class="slick-gallery">
+          <div class="photo"><img src="common/img/gallery/photo01.jpg" class="img-responsive media" alt="Photo 1"></div>
+          <div class="photo"><img src="common/img/gallery/photo02.jpg" class="img-responsive media" alt="Photo 2"></div>
+          <div class="photo"><img src="common/img/gallery/photo03.jpg" class="img-responsive media" alt="Photo 3"></div>
+          <div class="photo"><img src="common/img/gallery/photo04.jpg" class="img-responsive media" alt="Photo 4"></div>
+          <div class="photo"><img src="common/img/gallery/photo05.jpg" class="img-responsive media" alt="Photo 5"></div>
+          <div class="photo"><img src="common/img/gallery/photo06.jpg" class="img-responsive media" alt="Photo 6"></div>
+          <div class="photo"><img src="common/img/gallery/photo07.jpg" class="img-responsive media" alt="Photo 7"></div>
+          <div class="photo"><img src="common/img/gallery/photo08.jpg" class="img-responsive media" alt="Photo 8"></div>
+          <div class="photo"><img src="common/img/gallery/photo09.jpg" class="img-responsive media" alt="Photo 9"></div>
+          <div class="photo"><img src="common/img/gallery/photo10.jpg" class="img-responsive media" alt="Photo 10"></div>
+          <div class="photo"><img src="common/img/gallery/photo11.jpg" class="img-responsive media" alt="Photo 11"></div>
+          <div class="photo"><img src="common/img/gallery/photo12.jpg" class="img-responsive media" alt="Photo 12"></div>
+          <div class="photo"><img src="common/img/gallery/photo13.jpg" class="img-responsive media" alt="Photo 13"></div>
+          <div class="photo"><img src="common/img/gallery/photo14.jpg" class="img-responsive media" alt="Photo 14"></div>
+          <div class="photo"><img src="common/img/gallery/photo15.jpg" class="img-responsive media" alt="Photo 15"></div>
+          <div class="photo"><img src="common/img/gallery/photo16.jpg" class="img-responsive media" alt="Photo 16"></div>
+          <div class="photo"><img src="common/img/gallery/photo17.jpg" class="img-responsive media" alt="Photo 17"></div>
+          <div class="photo"><img src="common/img/gallery/photo18.jpg" class="img-responsive media" alt="Photo 18"></div>
+          <div class="photo"><img src="common/img/gallery/photo19.jpg" class="img-responsive media" alt="Photo 19"></div>
+          <div class="photo"><img src="common/img/gallery/photo20.jpg" class="img-responsive media" alt="Photo 20"></div>
+          <div class="photo"><img src="common/img/gallery/photo21.jpg" class="img-responsive media" alt="Photo 21"></div>
+          <div class="photo"><img src="common/img/gallery/photo23.jpg" class="img-responsive media" alt="Photo 23"></div>
+          <div class="photo"><img src="common/img/gallery/photo24.jpg" class="img-responsive media" alt="Photo 24"></div>
+          <div class="photo"><img src="common/img/gallery/photo25.jpg" class="img-responsive media" alt="Photo 25"></div>
+          <div class="photo"><img src="common/img/gallery/photo26.jpg" class="img-responsive media" alt="Photo 26"></div>
+          <div class="photo"><img src="common/img/gallery/photo27.jpg" class="img-responsive media" alt="Photo 27"></div>
+          <div class="photo"><img src="common/img/gallery/photo28.jpg" class="img-responsive media" alt="Photo 28"></div>
+          <div class="photo"><img src="common/img/gallery/photo29.jpg" class="img-responsive media" alt="Photo 29"></div>
+          <div class="photo"><img src="common/img/gallery/photo30.jpg" class="img-responsive media" alt="Photo 30"></div>
+          <div class="photo"><img src="common/img/gallery/photo31.jpg" class="img-responsive media" alt="Photo 31"></div>
+          <div class="photo"><img src="common/img/gallery/photo32.jpg" class="img-responsive media" alt="Photo 32"></div>
+          <div class="photo"><img src="common/img/gallery/photo33.jpg" class="img-responsive media" alt="Photo 33"></div>
+          <div class="photo"><img src="common/img/gallery/photo34.jpg" class="img-responsive media" alt="Photo 34"></div>
+          <div class="photo"><img src="common/img/gallery/photo35.jpg" class="img-responsive media" alt="Photo 35"></div>
+        </div><!-- end .slick-gallery -->
+      </div><!-- end .grid-col -->
+    </div><!-- end .grid-row -->
+  
+
+    <div class="grid-row">
+        <div class="grid-col-sm-6 twitter-feed">
+            <div class="feed-container">
+                <div class="grid-row feed-header">
+                    <div class="grid-col-xs-6 twitter-feed-title no-padding">
+                        Tweets
+                    </div>
+                    <!-- loading animation -->
+                    <div class="twitter-loading-backdrop"
+                         ng-show="twitterLoading"
+                    >
+                        <span   us-spinner="{
+                                    lines     :13,
+                                    length    :28,
+                                    width     :14,
+                                    radius    :42,
+                                    scale     :1.00,
+                                    corners   :1.0,
+                                    opacity   :0.25,
+                                    rotate    :0,
+                                    direction :1,
+                                    speed     :1.0,
+                                    trail     :60,
+                                    color     :'white'
+                                }"
+                                spinner-key="twitter-loading"
+                                spinner-start-active="true"
+                                spinner-on="twitterLoading"
+                        >
+                        </span>    
+                        <div class="spinner-message"></div> 
+                    </div>
+                    
+                    <div class="grid-col-xs-6 twitter-feed-follow no-padding">
+                        <a href="https://twitter.com/ims" 
+                            class="twitter-follow-button" 
+                            data-show-count="false"
+                            >Follow @IMS</a>
+                    </div>
+                </div><!-- end .feed-header -->
+                
+                <a class="twitter-timeline" 
+                    href="https://twitter.com/ims" 
+                    data-widget-id="714877256439631872"
+                    data-chrome="nofooter noheader noborder transparent"
+                    >
+                    Tweets 
+                </a>
+            </div><!-- end .feed-container -->
+        </div><!-- end .grid-row -->
+        
+        <!-- facebook feed -->
+        <div class="grid-col-sm-6 facebook-feed">
+            <div id="fb-root" class="feed-container">
+                <div class="grid-row feed-header">
+                    <div class="grid-col-xs-12 facebook-feed-title no-padding">
+                        Facebook
+                    </div>
+                </div><!-- end .feed-header -->
+                
+                <!-- loading animation -->
+                <div class="facebook-loading-backdrop"
+                     ng-show="facebookLoading"
+                >
+                    <span   us-spinner="{
+                                lines     :13,
+                                length    :28,
+                                width     :14,
+                                radius    :42,
+                                scale     :1.00,
+                                corners   :1.0,
+                                opacity   :0.25,
+                                rotate    :0,
+                                direction :1,
+                                speed     :1.0,
+                                trail     :60,
+                                color     :'white'
+                            }"
+                            spinner-key="facebook-loading"
+                            spinner-start-active="true"
+                            spinner-on="facebookLoading"
+                    >
+                    </span>    
+                    <div class="spinner-message"></div> 
+                </div>
+                <div class="fb-page"
+                     ng-show="fbShowFeedWidth == 500"
+                     data-href="https://www.facebook.com/IndianapolisMotorSpeedway" 
+                     data-tabs="timeline" 
+                     data-width="500"
+                     data-height="606"
+                     data-small-header="false" 
+                     data-adapt-container-width="false" 
+                     data-hide-cover="true"
+                     data-hide-cta="true"
+                     data-show-facepile="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/IndianapolisMotorSpeedway">
+                            <a href="https://www.facebook.com/IndianapolisMotorSpeedway">
+                                Indianapolis Motor Speedway
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>    
+                <div class="fb-page" 
+                     ng-show="fbShowFeedWidth == 400"
+                     data-href="https://www.facebook.com/IndianapolisMotorSpeedway" 
+                     data-tabs="timeline" 
+                     data-width="400"
+                     data-height="606"
+                     data-small-header="false" 
+                     data-adapt-container-width="false" 
+                     data-hide-cover="true"
+                     data-hide-cta="true"
+                     data-show-facepile="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/IndianapolisMotorSpeedway">
+                            <a href="https://www.facebook.com/IndianapolisMotorSpeedway">
+                                Indianapolis Motor Speedway
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="fb-page"
+                     ng-show="fbShowFeedWidth == 300"
+                     data-href="https://www.facebook.com/IndianapolisMotorSpeedway" 
+                     data-tabs="timeline" 
+                     data-width="300"
+                     data-height="606"
+                     data-small-header="false" 
+                     data-adapt-container-width="false" 
+                     data-hide-cover="true"
+                     data-hide-cta="true"
+                     data-show-facepile="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/IndianapolisMotorSpeedway">
+                            <a href="https://www.facebook.com/IndianapolisMotorSpeedway">
+                                Indianapolis Motor Speedway
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="fb-page"
+                     ng-show="fbShowFeedWidth == 260"
+                     data-href="https://www.facebook.com/IndianapolisMotorSpeedway" 
+                     data-tabs="timeline" 
+                     data-width="260"
+                     data-height="606"
+                     data-small-header="false" 
+                     data-adapt-container-width="false" 
+                     data-hide-cover="true"
+                     data-hide-cta="true"
+                     data-show-facepile="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/IndianapolisMotorSpeedway">
+                            <a href="https://www.facebook.com/IndianapolisMotorSpeedway">
+                                Indianapolis Motor Speedway
+                            </a>
+                        </blockquote>
+                    </div>
+                </div>
+            </div><!-- end .feed-container -->
+        </div><!-- end .facebook-feed -->
+    </div><!-- end .grid-row -->
+</div><!-- end .main-container -->
+
+<div class="footer-container content-container">
+    <div class="grid-row">
+        <div class="grid-col-xs-12">
+            <!-- content here -->
+        </div>
+    </div>
+</div>
+
+<!-- slick gallery js (http://kenwheeler.github.io/slick/) -->
+<script type="text/javascript" src="common/js/slick-gallery/slick/slick.js"></script>
+<!-- Slick-lightbox js (http://mreq.github.io/slick-lightbox/) -->
+<script type="text/javascript" src="common/js/slick-lightbox/dist/slick-lightbox.js"></script>
+<script type="text/javascript" src="common/js/slick-gallery.js"></script>
+<script type="text/javascript" src="common/js/slick-gallery-video.js"></script>

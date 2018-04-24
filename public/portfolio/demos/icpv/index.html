@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Visualization</title>
+
+    <!-- Normalize.css makes browsers render all elements more consistently and in line with modern standards -->
+    <link href="common/css/normalize.css" rel="stylesheet">
+
+    <!-- Web fonts -->
+    <link href="common/fonts/fontello/css/fontello.css" rel="stylesheet">
+
+    <!-- My responsive library -->
+    <link href="common/css/responsive.css" rel="stylesheet">
+
+    <!-- My custom styles-->
+    <link href="common/css/styles.css" rel="stylesheet">
+
+    <!-- for svg thisFile references -->
+    <script>window.thisFile = window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1);</script>
+
+  </head>
+
+  <body>
+    <div class="header-container">
+      <div class="content-container header">
+        <div class="grid-row no-padding">
+          <div class="grid-col-sm-6 logo-container">
+            <img src="common/img/indystar-logo.png" class="logo">
+          </div><!-- end .grid-col -->
+
+          <div class="grid-col-sm-6 site-title-container">
+            <img src="common/img/title.png" class="site-title">
+          </div><!-- end .grid-col -->
+        </div><!-- end .grid-row -->
+      </div><!-- end .header -->
+    </div><!-- end .header-container -->
+
+    <div class="main-container">
+      <div class="content-container main">
+        <div class="grid-row">
+          <div class="grid-col-sm-3 year-container">
+            <!-- future dev: drop-down to select year -->
+            <div class="year">
+              <div class="dropdown dropdown-title" data-target="#year">
+                <span>2016</span>
+                <i class="icon icon-down-dir-2"></i>
+              </div><!-- end .selected-year -->
+
+              <div id="year" class="year-list-container">
+                <ul class="year-list">
+                  <li><a href="#">2016</a></li>
+                  <li><a href="#">2015</a></li>
+                  <li><a href="#">2014</a></li>
+                </ul><!-- end .year-list -->
+              </div><!-- end .year-list-container -->
+            </div><!-- end .year -->
+          </div><!-- end .year-container -->
+
+          <div class="grid-col-sm-6 chart-title-container">
+            <h1 class="chart-title"> CTR % <span id="circle-chart-1-title"></span></h1>
+          </div><!-- end .chart-title-container -->
+
+          <div class="grid-col-sm-3 categories-container">
+            <!-- future dev: drop-down to select advertiser categories -->
+            <div class="advertiser-categories">
+              <div class="dropdown dropdown-title" data-target="#categories">
+                <span>Advertisers</span>
+                <i class="icon icon-down-dir-2"></i>
+              </div><!-- end .dropdown-title -->
+
+              <div id="categories" class="categories-list-container">
+                <label class="input-checkbox"><input type="checkbox" name="categories" value="option1"> Automotive</label>
+                <label class="input-checkbox"><input type="checkbox" name="categories" value="option2"> Food</label>
+                <label class="input-checkbox"><input type="checkbox" name="categories" value="option3"> Hotel</label>
+              </div><!-- end .categories-container -->
+            </div><!-- end .advertiser-categories -->
+          </div><!-- end .categories-container -->
+        </div><!-- end .grid-row -->
+
+        <div class="dot-legend-container">
+          <div class="dot-legend noselect"
+               onClick="window.indystar_chart.chart('circleChart1').toggleData('indystar');"
+          >
+            <svg class="indystar-dot-legend">
+                <!-- ALL SVG DEFINITIONS ARE AT THAT BOTTOM OF THE PAGE -->
+                <g id="indystar" style="filter: url(#blurFilter)">
+                  <ellipse cx="20" cy="18" rx="10" ry="10" stroke-width="3" stroke="url(#blueGradHorizontal)" fill="url(#blueGradVertical)" />
+                  <text x="40" y="25" fill="#00c0ff">IndyStar</text>
+                </g>
+            </svg><!-- end .indystar-dot-legend -->
+          </div><!-- end .dot-legend -->
+
+          <div class="dot-legend noselect"
+               onClick="window.indystar_chart.chart('circleChart1').toggleData('adnetwork'); "
+          >
+            <svg class="adnetwork-dot-legend">
+              <g id="adnetwork" style="filter: url(#blurFilter)">
+                <ellipse cx="20" cy="18" rx="10" ry="10" stroke-width="3" stroke="url(#orangeGradHorizontal)" fill="url(#orangeGradVertical)" />
+                <text x="40" y="25" fill="#ff8a00">AdNetwork</text>
+              </g>
+            </svg><!-- end .adnetwork-dot-legend -->
+          </div><!-- end .dot-legend -->
+
+          <div class="dot-legend noselect"
+               onClick="window.indystar_chart.chart('circleChart1').toggleData('adnetwork-indystar');"
+          >
+            <svg class="adnetwork-indystar-dot-legend">
+              <g id="adnetwork-indystar" style="filter: url(#blurFilter)">
+                <ellipse cx="20" cy="18" rx="10" ry="10" stroke-width="3" stroke="url(#greenGradHorizontal)" fill="url(#greenGradVertical)" />
+                <text x="40" y="25" fill="#19ca00">AdNetwork / IndyStar</text>
+              </g>
+            </svg><!-- end .adnetwork-indystar-dot-legend -->
+          </div><!-- end .dot-legend -->
+
+          <div class="clear-fix"></div>
+        </div><!-- end .dot-legend-container -->
+
+        <div class="grid-row">
+          <div class="grid-col-xs-12">
+            <div class="chart-container circlechart1-container">
+              <!-- D3 CHART -->
+              <svg class="chart" id="circleChart1"></svg>
+            </div><!-- end .chart-container -->
+          </div><!-- end .grid-col -->
+        </div><!-- end .grid-row -->
+
+        <div class="line-legend-container">
+          <div class="line-legend">
+            <svg class="indystar-line-legend">
+              <g>
+                <rect x="0" y="10" width="30" height="5" style="fill:#00c0ff;" />
+                <text x="40" y="17" fill="#00c0ff">IndyStar AVG</text>
+              </g>
+            </svg><!-- end .indystar-line-legend -->
+          </div><!-- end .line-legend -->
+
+          <div class="line-legend">
+            <svg class="adnetwork-line-legend">
+              <g>
+                <rect x="0" y="10" width="30" height="5" style="fill:#ff8a00;" />
+                <text x="40" y="17" fill="#ff8a00">AdNetwork AVG</text>
+              </g>
+            </svg><!-- end .adnetwork-line-legend -->
+          </div><!-- end .line-legend -->
+
+          <div class="line-legend">
+            <svg class="adnetwork-indystar-line-legend">
+              <g>
+                <rect x="0" y="10" width="30" height="5" style="fill:#19ca00;" />
+                <text x="40" y="17" fill="#19ca00">AdNetwork / IndyStar AVG</text>
+              </g>
+            </svg><!-- end .adnetwork-indystar-line-legend -->
+          </div><!-- end .line-legend -->
+
+          <div class="line-legend">
+            <svg class="google-line-legend">
+              <g>
+                <rect x="0" y="10" width="11" height="5" style="fill:#FFFFFF;" />
+                <rect x="15" y="10" width="11" height="5" style="fill:#FFFFFF;" />
+                <text x="40" y="17" fill="#FFFFFF">Google Benchmark</text>
+              </g>
+            </svg><!-- end .google-line-legend -->
+          </div><!-- end .line-legend -->
+
+          <div class="clear-fix"></div>
+        </div><!-- end .line-legend-container -->
+      </div><!-- end .main -->
+    </div><!-- end .main-container -->
+
+    <div class="footer-container">
+      <div class="content-container footer">
+        <div class="grid-row">
+          <div class="grid-col-sm-4">
+            &nbsp;
+          </div><!-- end .category-container -->
+
+          <div class="grid-col-sm-4">
+            <p>All Rights Reserve<span onClick="rollAlong()">d</span>.</p>
+          </div><!-- end .category-container -->
+
+          <div class="grid-col-sm-4">
+            &nbsp;
+          </div><!-- end .category-container -->
+        </div><!-- end .grid-row -->
+      </div><!-- end .footer -->
+    </div><!-- end .footer-container -->
+
+    <!-- SVG styling definitions -->
+    <svg width="0" height="0">
+      <defs>
+        <!-- blue dot gradients -->
+        <linearGradient id="blueGradHorizontal" x1="100%" y1="0%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#00c0ff; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#02648d; stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="blueGradVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#00c0ff; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#01405b; stop-opacity:1" />
+        </linearGradient>
+
+        <!-- orange dot gradients -->
+        <linearGradient id="orangeGradHorizontal" x1="100%" y1="0%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#ff8a00; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#833d00; stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="orangeGradVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff8a00; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#562801; stop-opacity:1" />
+        </linearGradient>
+
+        <!-- green dot gradients -->
+        <linearGradient id="greenGradHorizontal" x1="100%" y1="0%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#19ca00; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#0b5b00; stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="greenGradVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#19ca00; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#084100; stop-opacity:1" />
+        </linearGradient>
+
+
+        <linearGradient id="whiteGradVertical" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#000000; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#000000; stop-opacity:1" />
+        </linearGradient>
+
+
+        <!-- drop shadow -->
+        <filter id="blurFilter" x="-5" y="-5" width="40" height="40">
+          <feOffset in="SourceAlpha" dx="3" dy="3" result="offset" />
+          <feGaussianBlur in="offset" stdDeviation="2" result="blur" />
+
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+      </defs>
+    </svg>
+  </body>
+
+  <!-- chart snippet (dependencies: jquery, d3) -->
+  <!--
+  <link rel="stylesheet" href="test10/circleChart1.css"/>
+  <script src="common/js/node_modules/object-assign-shim/index.js"></script>
+  <script src="common/js/node_modules/jquery.2/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="common/js/d3.v3/d3.v3.min.js"></script>
+  <script src="test10/chart.js"></script>
+  <script>
+    window.indystar_chart
+      .chart('circleChart1')
+        .container('#circleChart1')
+        .buildChartTitle('#circle-chart-1-title')
+        .fetchData('test10/data.json')
+          .then(function(chart) {
+            chart.shuffleData();
+            chart.render();
+          })
+    ;
+  </script>
+  -->
+
+  <!-- chart snippet (dependencies: jquery, d3) -->
+  <link rel="stylesheet" href="staggertest13/circleChart1.css"/>
+  <script src="common/js/node_modules/object-assign-shim/index.js"></script>
+  <script src="common/js/node_modules/jquery.2/node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="common/js/d3.v3/d3.v3.min.js"></script> -->
+  <script src="common/js/node_modules/d3/build/d3.min.js"></script>
+  <script src="common/js/node_modules/d3-extended/d3-extended.min.js"></script>
+  <script src="common/js/node_modules/handlebars/dist/handlebars.min.js"></script>
+
+  <script src="staggertest13/chart.js"></script>
+  <script>
+  /* globals $ */
+
+    window.indystar_chart
+      .chart('circleChart1')
+        .container('#circleChart1')
+        .buildChartTitle('#circle-chart-1-title')
+        //.fetchData('../backend/public/index.php/campaigns/dummyData')
+        //.fetchData('../backend/public/index.php/campaigns/all')
+        //.fetchData('datacache/13689.json')
+        .fetchData('datacache/data.json')
+          .then(function(chart) {
+            // chart.shuffleData();
+            chart
+              .renderChart({
+                drawData: false
+              })
+              .renderDataByDateAndType()
+            ;
+          })
+    ;
+    var chart = window.indystar_chart.chart('circleChart1');
+  </script>
+
+  <!-- used for future feature -->
+  <script src="../common/js/dropdowns.js" type="text/javascript"></script>
+
+
+  <!-- bubble info template -->
+  <script id="bubble-template" type="text/x-handlebars-template">
+    <div class="bubble-info-container bubble-info-container-{{datatype}}">
+
+      <div class="bubble-info-title bubble-info-title-{{datatype}}">
+        {{datatypeCapitalized}} ({{formattedAverage.ctr}})
+      </div>
+      <div class="bubble-info-lifts">
+        {{#each formattedDifferences}}
+            <div class="{{this.className}}">
+              {{#if this.isNegative}}-{{/if}}
+              {{#if this.isPositive}}+{{/if}}
+              {{this.abslift}} {{#if this.isPositive}}LIFT{{/if}} vs. {{this.datatype}} ({{this.ctr}})
+            </div>
+        {{/each}}
+      </div>
+
+      <div class="bubble-triangle-down bubble-triangle-down-{{datatype}}"></div>
+    </div>
+  </script>
+
+
+
+</html>

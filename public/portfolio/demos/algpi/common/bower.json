@@ -1,0 +1,36 @@
+{
+  "name": "IMS GrandPrix",
+  "description": "Indianapolis Motor Speedway - GrandPrix Indianapolis",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular-ui": "^0.4.0",
+    "angular": "^1.5.3",
+    "ui-router-extras": "^0.1.2"
+  },
+  "devDependencies": {
+    "angular-bootstrap": "^1.2.5",
+    "angular-animate": "^1.5.3",
+    "angular-facebook": "^0.2.3",
+    "angular-debounce": "^1.0.3",
+    "angular-sanitize": "^1.5.3",
+    "angular-spinner": "^0.8.1",
+    "exif-js": "^2.1.1",
+    "jquery": "^2.2.2",
+    "jquery-validation": "^1.15.0",
+    "lodash": "^4.6.1",
+    "ng-lodash": "^0.4.0",
+    "spin.js": "^2.3.2",
+    "bootstrap": "^3.3.6"
+  }
+}
