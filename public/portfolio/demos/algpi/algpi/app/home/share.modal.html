@@ -1,0 +1,37 @@
+<!-- ************ CONFIRMATION MODAL AFTER USER SIGNS UP ************  -->
+
+
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="dismiss()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">Thank You</h4>
+  </div>
+  <div class="modal-body">
+    <h4 class="center">Your entry has been submitted.</h4>
+    <p>&nbsp;</p>
+    <div class="site-social-share">
+        <p>
+            <a class="button button-facebook"
+                ng-click="outterScope.shareVia('facebook')"
+            >
+                <i class="icon icon-facebook-squared"></i> Share on Facebook
+            </a><br>
+            <a class="button button-twitter"
+                ng-click="outterScope.shareVia('twitter')"
+            >
+                <i class="icon icon-twitter"></i> Share on Twitter
+            </a><br>
+            <a class="button button-red"
+                ng-click="outterScope.shareVia('googleplus')"
+            >
+                <i class="icon icon-googleplus-rect"></i> Share via Google+
+            </a><br>
+            <a class="button button-green"
+                ng-click="outterScope.shareVia('email')"
+            >
+                <i class="icon icon-mail"></i> Share via Email
+            </a>
+        </p>
+    </div>
+  </div>
+</div>

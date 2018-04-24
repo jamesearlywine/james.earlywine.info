@@ -1,0 +1,145 @@
+<!-- BUBBLES -->
+<script type="text/ng-template" 
+        id="bubbleTestTemplate.html"
+        >
+        <div>
+            <div>
+                Turn #<span ng-bind="currentBubble.turnNumber"></span>!  
+            </div>
+            <div
+                ng-if="currentBubble.photo"
+            >photo: <img ng-src="currentBubble.photo"/></div>
+            <div>video: <span ng-bind="currentBubble.video"></span></div>
+            <div>text:  <span ng-bind-html="currentBubble.text"></span></div>
+        </div>
+</script>
+<script type="text/ng-template" 
+        id="bubbleTemplate.html"
+        >
+    <!-- Info bubble -->
+        <div class="bubble-content"
+             ng-mouseenter="bubbleEnter(currentBubble.turnNumber)"
+             ng-mouseleave="bubbleLeave(currentBubble.turnNumber)"
+        >
+            <div class="grid-row no-padding bubble-header">
+                <div class="grid-col-xs-6">
+                    <h4 class="bubble-title"
+                        ng-if="!currentBubble.title"
+                    >Turn #<span ng-bind="currentBubble.turnNumber"></span></h4>
+                    <h4 class="bubble-title"
+                        ng-if="currentBubble.title"
+                        ng-bind="currentBubble.title"
+                    ></h4>
+                </div>
+                <div class="grid-col-xs-6" style="text-align:right;">
+                    <button 
+                        ng-click="$parent.openMarkerModal(currentBubble.turnNumber)"
+                        style="padding:0px; background:transparent; font-size:1em; display:inline-block;"
+                    >
+                        <i class="icon icon-resize-full"><span class="tiny-text">ENLARGE</span></i>
+                    </button>
+                    <button 
+                        ng-click="bubbleLeave(currentBubble.turnNumber)"
+                        style="padding:0px; background:transparent; font-size:1em; margin-left:10px; display:inline-block;"
+                    >
+                        <i class="icon icon-cancel"><span class="tiny-text">CLOSE</span></i>
+                    </button>
+                </div>
+            </div><!-- end .bubble-header -->
+            
+            <div class="grid-row no-padding bubble-body">
+                <div class="grid-col-xs-12">
+                    <!-- photo container -->
+                    <div class="bubble-photo"
+                         ng-if="currentBubble.photo"
+                    >
+                        <img ng-src="{{currentBubble.photo}}" 
+                             class="img-responsive" 
+                             alt="photo"
+                             />
+                    </div>
+                    
+                    <!-- video container -->
+                    <div class="embed-responsive embed-responsive-16by9 bubble-video"
+                         ng-if="currentBubble.video"
+                    >
+                      <iframe class="embed-responsive-item" 
+                              ng-src="{{currentBubble.video}}" 
+                              frameborder="0" 
+                              allowfullscreen
+                      ></iframe>
+                    </div>
+                </div>
+                
+                <div class="grid-col-xs-12">
+                    <!-- description container -->
+                    <p class="bubble-description"><span ng-bind-html="currentBubble.text"></span></p>
+                    
+                    <!-- bubble share buttons -->
+                    <div class="bubble-social-share">
+                        <a href=""
+                            ng-click="TurnShareService.shareTurn(currentBubble.turnNumber, 'facebook')"
+                        ><i class="icon icon-facebook-squared"></i></a>
+                        <a href=""
+                            ng-click="TurnShareService.shareTurn(currentBubble.turnNumber, 'twitter')"
+                        ><i class="icon icon-twitter"></i></a>
+                        <a href=""
+                            ng-click="TurnShareService.shareTurn(currentBubble.turnNumber, 'googleplus')"
+                        ><i class="icon icon-googleplus-rect"></i></a>
+                        <a href=""
+                            ng-click="TurnShareService.shareTurn(currentBubble.turnNumber, 'email')"
+                        ><i class="icon icon-mail"></i></a>
+                    </div>
+                    <p>&nbsp;</p>
+                </div>
+            </div><!-- end .bubble-body -->
+        </div><!-- end .bubble-content -->
+</script>
+
+<div class="grid-row center no-padding">
+    <!-- <p>IPAD RACE MAP</p> -->
+
+        <div
+            id="the-panzoom-race-map"
+            class="panzoom-race-map-container"
+        >
+            
+            <div class="race-map race-map-ipad"
+                 ng-mousemove="mapMouseMove($event)"
+            >
+               
+                <!-- TURN MARKERS -->
+                <div class="marker-container">
+                    <!-- marker -->
+                    <div class="turn"
+                         ng-repeat="(markerId, marker) in markerState"
+                         ng-mouseenter="openMarkerModal(markerId)"
+                         ng-mouseleave="hoverOut(markerId)"  
+                         ng-attr-id="{{'turn' + markerId + 'ipad'}}" 
+                         ng-class="{
+                             'turn-selected' : markerState[markerId].selected,
+                             'turn-today'    : markerId == dayNumber,
+                             'other-feature' : bubbles[markerId].type == 'other'
+                         }"
+                         uib-popover-template="'bubbleTemplate.html'"
+                         popover-is-open="bubbles[markerId].display && !$parent.modalOpen"
+                         popover-trigger="none"
+                         popover-placement="auto"
+                         popover-append-to-body="true"
+                         popover-class="panzoom-marker-popover"
+                         popover-animation="!isiPad"
+                    >
+                        <span class="turn-number" ng-bind="bubbles[markerId].markerLabel"></span>
+                    </div>
+                    
+                </div>
+            </div><!-- end .race-map -->
+            
+       </div>
+
+    <!-- <ng-transclude></ng-transclude> -->
+</div>
+
+
+
+
