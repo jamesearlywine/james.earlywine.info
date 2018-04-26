@@ -508,7 +508,7 @@
               <!-- AngiesListGrandPrix  -->
               <div class="item row">
                 <div class="col-xs-12 col-sm-6">
-                  <a href="#" target="_blank">
+                  <div onclick="galleries.algpi.open()" target="_blank">
                     <h3 class="title">Angies List Grand Prix (2015)</h3>
                     <img class="img-responsive project-image" src="assets/images/projects/algpi-display.png" alt="KentuckyKingdom Image"
                     />
@@ -516,7 +516,7 @@
                       <span class="btn btn-cta-secondary mx-auto">
                         <i class="fa fa-external-link"></i>Screenshots</span>
                     </div>
-                  </a>
+                  </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                   <h3 class="title">Principal Developer</h3>
@@ -524,12 +524,18 @@
                     Another micro-site we put together on short-order.  Each numbered location on the map has pop-overs with pictures and video from that vantage point on the track, and information about the events happening there during the grand prix race.
                   </p>
                   <p>
-                    Screenshots soon to follow.
+                     (the screenshots I dug up,  don't include the map functionality - the most interesting/engaging part)
                   </p>
                   <p>
                     <strong>Tech:</strong> AWS [EC2, S3], PHP5, Laravel 4.2, Javascript, AngularJS, HTML, CSS, Bootstrap
                   </p>
                 </div>
+                <!-- screenshots -->
+                <ul id="gallery-screenshots-algpi" style="display:none">
+                  <li image="assets/images/screenshots/algpi/desktop-home.jpg" title="AngiesList GrandPrix"></li>
+                  <li image="assets/images/screenshots/algpi/tablet-home.jpg" title="AngiesList GrandPrix"></li>
+                  <li image="assets/images/screenshots/algpi/mobile-home.jpg" title="AngiesList GrandPrix"></li>
+                </ul>
               </div>
               <!--//item-->
 
@@ -736,20 +742,48 @@
         </aside>
         <!--//section-->
 
-        <aside class="list music aside section">
+        <aside class="list skills aside section">
           <div class="section-inner">
-            <h2 class="heading">Favorite coding music</h2>
+            <h2 class="heading">Skillsets</h2>
             <div class="content">
-              <ul class="list-unstyled">
-                <li>
-                  <i class="fa fa-headphones"></i>Radiohead</li>
-                <li>
-                  <i class="fa fa-headphones"></i>Bassnectar</li>
-                <li>
-                  <i class="fa fa-headphones"></i>T-Pain</li>
-                <li>
-                  <i class="fa fa-headphones"></i>Dave Matthews</li>
-              </ul>
+
+              <h4>Strong</h4>
+              <p>
+                Domain Driven Design, Object Oriented Design Patterns & Principles, Event-Driven Programming, Service Oriented Architecture,
+                Distributed Systems, RESTful Webservices, PHP5/7, MVC/MVVM Frameworks, Laravel4/5, CodeIgniter, Single-Page-Applications,
+                Javascript, JQuery, Underscore/Lodash, AngularJS, Backbone, Handlebars, Relational Database Design, MySQL, Postgres, HTML,
+                CSS, SCSS, AWS, Ubuntu, Nginx, Apache2, AWS [EC2, S3, RDS, EBS, EIP], Cross-Browser Issues, 3rd Party Webservice Integrations
+              </p>
+              <br/>
+
+              <h4>Knowledgeable</h4>
+              <p>
+                Functional and Functional Reactive Programming, Aspect Oriented Programming, Angular4, RxJS, Typescript, Jasmine/Karma/Selenium/Protractor, Jenkins, Docker,
+                NoSQL, MongoDB, Prototyping, CentOS, Bash, Config Management Strategies, OAuth, JWT, Data Visualizations, Kohana Framework,
+                Wordpress, PHP4, D3JS, Data Ingestion/Migration, CSV/Excel import/export/manipulation.
+              </p>
+              <br/>
+
+              <h4>Familiar</h4>
+              <p>
+                Java, Grails2/3, Spring, Chef, Redis, Visual Mocking, UI/UX Prototyping, Hybrid Apps (Ionic), Splunk, Papertrail, Consul,
+                Node, Scalr
+              </p>
+              <br/>
+
+              <h4>Tools</h4>
+              <p>
+                MySQL Workbench, DbViz, PgAdmin, Webpack, Grunt, Gulp, Bower, NPM, Composer, AWS CLI, Git, VSCode, IntelliJ, Eclipse, Sublime,
+                Cloud9, Doxygen. SwaggerUI, Balsamiq, Photoshop
+              </p>
+              <br/>
+
+              <h4>Interested</h4>
+              <p>
+                Node, Express, Websockets, Meteor, Progressive-Web-Applications, Native Apps, NativeScript, Python, expanding my AWS knowledge/experience
+                to include more of their platform.
+              </p>
+
             </div>
             <!--//content-->
           </div>
@@ -758,6 +792,40 @@
         <!--//section-->
 
         <aside class="list music aside section">
+          <div class="section-inner">
+            <h2 class="heading">Favorite coding music</h2>
+            <div class="content">
+              <ul class="list-unstyled">
+                <li>
+                  <i class="fa fa-headphones"></i>Radiohead
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>Bassnectar
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>T-Pain
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>Dave Matthews
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>Ani Difranco
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>Tori Amos
+                </li>
+                <li>
+                  <i class="fa fa-headphones"></i>Pink Floyd
+                </li>
+              </ul>
+            </div>
+            <!--//content-->
+          </div>
+          <!--//section-inner-->
+        </aside>
+        <!--//section-->
+
+        <aside class="list influences aside section">
           <div class="section-inner">
             <h2 class="heading">Influences</h2>
             <div class="content">

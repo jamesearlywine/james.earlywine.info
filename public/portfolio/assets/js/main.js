@@ -72,6 +72,7 @@ jQuery(document).ready(function($) {
     };
     window.galleries = {
       edmeplus: $('ul#gallery-screenshots-edmeplus li').simpleLightbox(window.screenshotGalleryOptions),
+      algpi: $('ul#gallery-screenshots-algpi li').simpleLightbox(window.screenshotGalleryOptions)
     };
 
 
