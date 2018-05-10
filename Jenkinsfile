@@ -12,9 +12,9 @@ pipeline {
     }
     stage('Invalidate CloudFlare CDN Cache') {
       environment {
-        CLOUDFLARE_EMAIL=credential('cloudflare_email_james.earlywine.info')
-        CLOUDFLARE_ZONE=credential('cloudflare_zone_james.earlywine.info')
-        CLOUDFLARE_API_KEY=credential('cloudflare_api_key.james.earlywine.info')
+        CLOUDFLARE_EMAIL    = credentials('cloudflare_email_james.earlywine.info')
+        CLOUDFLARE_ZONE     = credentials('cloudflare_zone_james.earlywine.info')
+        CLOUDFLARE_API_KEY  = credentials('cloudflare_api_key.james.earlywine.info')
       }
       steps {
         script {
