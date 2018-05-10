@@ -8,7 +8,6 @@ services:
       dockerfile: webserver.Dockerfile
     volumes:
       - "./public:/var/www/html"
-      - "./webapp.init.sh:/usr/local/bin/webapp.init.sh"
     environment:
       - "ENVIRONMENT=local"
       - "VIRTUAL_HOST=james.earlywine.info"
