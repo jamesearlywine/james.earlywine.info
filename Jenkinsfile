@@ -23,7 +23,7 @@ pipeline {
               -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
               -H "X-Auth-Key: $CLOUDFLARE_API_KEY" \
               -H "Content-Type: application/json" \
-              --data \'{"purge_everything":true}\'
+              --data \'{"purge_everything":true}\' \
             '
           }
         }
