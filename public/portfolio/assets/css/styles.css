@@ -581,6 +581,6 @@ iframe {
 }
 @Media (min-width: 992px) and (max-width: 1199px) {
   .performance-appraisal-links-abbreviated li {
-    margin-left: -5px;
+    margin-left: -7px;
   }
 }
