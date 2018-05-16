@@ -564,3 +564,18 @@ iframe {
     float: right;
   }
 }
+
+.performance-appraisal-links-full {
+  display: block;
+}
+.performance-appraisal-links-abbreviated {
+  display: none;
+}
+@Media (min-width: 992px) and (max-width: 1399px) {
+  .performance-appraisal-links-full {
+    display: none;
+  }
+  .performance-appraisal-links-abbreviated {
+    display: block;
+  }
+}
